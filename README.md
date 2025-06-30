@@ -86,4 +86,35 @@ Foi criada uma pasta **documentos**, onde as evidências dos testes serão aloca
 ---
 
 ### 🗃️ Minha Conta
-- Editar informações
+- Editar informações pessoais
+- Alterar senha
+- Verificar histórico de pedidos
+- Acessar e gerenciar lista de desejos
+
+---
+
+### ⭐ Avaliação de Produtos
+- Adicionar avaliação como logado
+- Tentar avaliar como visitante
+- Validar erros ao enviar sem preencher campos
+
+---
+
+### ✉️ Contato
+- Enviar mensagem com dados válidos
+- Enviar com campos obrigatórios em branco
+- Validar mensagem de sucesso/erro
+
+---
+
+### 🔧 Outros
+- Adicionar e comparar produtos
+- Cadastrar na newsletter e validar
+- Trocar idioma/moeda e validar
+- Validar responsividade do site
+
+---
+
+## ⚙️ Instalação e Configuração XAMPP
+
+
