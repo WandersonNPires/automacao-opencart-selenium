@@ -1,26 +1,30 @@
-#🛠️ automacao-opencart-selenium
-
+🛠️ automacao-opencart-selenium
 📂 Acessando o Projeto
 Realize a instalação do Git na máquina para que seja possível clonar o projeto criado.
 
 Necessário a instalação do Java (versão utilizada: 11.0.26).
 
-#💻 Ferramentas Utilizadas
+💻 Ferramentas Utilizadas
 ☕ Java
+
 🐙 Git
+
 🖥️ VSCode
+
 🛠️ XAMPP
 
-
-#📦 Dependências Utilizadas
+📦 Dependências Utilizadas
 📜 JavaScript
+
 ✅ TestNG
+
 🚀 Maven
+
 🌐 Selenium WebDriver
+
 ☕ Java - 11.0.26
 
-
-#🗂️ Pasta Documentos
+🗂️ Pasta Documentos
 Foi criada uma pasta documentos, onde as evidências dos testes serão alocadas após sua execução.
 
 ✅ Cenários de Teste
