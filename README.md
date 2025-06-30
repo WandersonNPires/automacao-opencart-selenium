@@ -4,6 +4,7 @@
 
 Realize a instalação do **Git** na máquina para que seja possível clonar o projeto criado.  
 Necessário a instalação do **Java** (versão utilizada: `11.0.26`).
+Utilize o Vscode para abrir o projeto e ter acesso as automações realizadas
 
 ---
 
