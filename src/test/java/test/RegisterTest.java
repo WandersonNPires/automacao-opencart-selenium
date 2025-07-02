@@ -12,8 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Checks.RegisterCheck;
 import pages.RegisterPage;
-import pages.RegisterCheck;
 
 public class RegisterTest {
 
