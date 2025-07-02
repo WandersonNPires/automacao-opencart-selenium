@@ -6,17 +6,17 @@ import org.testng.annotations.Test;
 
 import Checks.LoginCheck;
 import Checks.RegisterCheck;
+import data.MassOfData;
 import pages.LoginPage;
 
 public class LoginTest {
 
     @Test
     public void acessarTeladeLogin() {
-
-        String emailAddress= "wandersonneivaa@gmail.com";
-        String password= "eumesmo12";
+        // Usando constantes da massa de dados
+        String emailAddress = MassOfData.EMAIL_VALIDO;
+        String password = MassOfData.SENHA_VALIDA;
         String expectedLogin = "My Account";
-
 
         ChromeDriver navegador = new ChromeDriver();
         navegador.manage().window().maximize();
@@ -30,20 +30,17 @@ public class LoginTest {
 
         LoginCheck loginsucess = new LoginCheck(navegador);
         String mensagemExibida = loginsucess.loginFeito();
-        Assert.assertEquals(mensagemExibida,expectedLogin);
+        Assert.assertEquals(mensagemExibida, expectedLogin);
 
-
-
-
+        navegador.quit();
     }
 
     @Test
-    public void loginSemSucesso(){
-
-        String emailAddress= "wandersonneiv@gmail.com";
-        String password= "";
+    public void loginSemSucesso() {
+        // Usando constantes da massa de dados para email e senha inválidos
+        String emailAddress = MassOfData.EMAIL_INVALIDO;
+        String password = MassOfData.SENHA_INVALIDA;
         String expectedLogin = "Warning: No match for E-Mail Address and/or Password.";
-
 
         ChromeDriver navegador = new ChromeDriver();
         navegador.manage().window().maximize();
@@ -59,9 +56,6 @@ public class LoginTest {
         String mensagemExibida = loginNotsucess.capturarAlerta();
         Assert.assertEquals(mensagemExibida, expectedLogin);
 
-
-
-
+        navegador.quit();
     }
-
 }
