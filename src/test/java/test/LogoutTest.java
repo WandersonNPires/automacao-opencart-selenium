@@ -4,8 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Checks.LogoutCheck;
 import pages.LoginPage;
-import pages.LogoutCheck;
 import pages.LogoutPage;
 
 public class LogoutTest {
