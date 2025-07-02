@@ -4,9 +4,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pages.LoginCheck;
+import Checks.LoginCheck;
+import Checks.RegisterCheck;
 import pages.LoginPage;
-import pages.RegisterCheck;
 
 public class LoginTest {
 
