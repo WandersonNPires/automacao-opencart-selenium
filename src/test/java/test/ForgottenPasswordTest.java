@@ -6,8 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Checks.ForgottenPasswordCheck;
 import pages.ForgottenPasswordPage;
-import pages.ForgottenPasswordSucess;
 
 public class ForgottenPasswordTest {
 
@@ -27,7 +27,7 @@ public class ForgottenPasswordTest {
          ForgottenPasswordPage.inserirEmail(emailAddress);
          ForgottenPasswordPage.clicarEmContinue();
 
-         ForgottenPasswordSucess sucess = new ForgottenPasswordSucess(navegador);
+         ForgottenPasswordCheck sucess = new ForgottenPasswordCheck(navegador);
          String mensagemEsperada = sucess.textoSucesso();
          Assert.assertEquals(mensagemEsperada, ExpectedMessege); 
 

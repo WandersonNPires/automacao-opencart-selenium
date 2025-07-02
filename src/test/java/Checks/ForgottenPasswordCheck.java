@@ -1,13 +1,13 @@
-package pages;
+package Checks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import bases.PageBase;
 
-public class ForgottenPasswordSucess extends PageBase{
+public class ForgottenPasswordCheck extends PageBase{
 
-       public ForgottenPasswordSucess(WebDriver navegador) {
+       public ForgottenPasswordCheck(WebDriver navegador) {
         super(navegador);
        }
 
