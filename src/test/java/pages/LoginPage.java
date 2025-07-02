@@ -30,7 +30,7 @@ public class LoginPage extends PageBase{
     }
 
     public void logar(){
-        clicar(By.xpath("//*[@id=\"form-login\"]/div[3]/button"));
+        clicar(By.xpath("//form[@id='form-login']//button"));
     }
 
     
