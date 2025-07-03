@@ -6,16 +6,7 @@ import java.net.URL;
 
 public class MassOfData {
 
-    // Definindo os dados de teste (email e senha válidos)
-    public static final String FIRST_NAME_VALIDO = "Wanderson";
-    public static final String LAST_NAME_VALIDO  = "Silva";
-    public static final String EMAIL_VALIDO = "marilene.lourenco@base2.com.br";
-    public static final String SENHA_VALIDA = "senha123";
-
-    // Definindo dados inválidos para testes
-    public static final String EMAIL_INVALIDO = "wandersonneiv@gmail.com";
-    public static final String SENHA_INVALIDA = "senhaerrada";
-
+    
 
 
 

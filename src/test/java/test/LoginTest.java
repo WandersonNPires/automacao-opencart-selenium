@@ -3,6 +3,7 @@ package test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import data.LoginData;
 
 import Checks.LoginCheck;
 import Checks.RegisterCheck;
@@ -14,8 +15,8 @@ public class LoginTest {
     @Test
     public void acessarTeladeLogin() {
         // Usando constantes da massa de dados
-        String emailAddress = MassOfData.EMAIL_VALIDO;
-        String password = MassOfData.SENHA_VALIDA;
+        String emailAddress = LoginData.EMAIL_VALIDO;
+        String password = LoginData.SENHA_VALIDA;
         String expectedLogin = "My Account";
 
         ChromeDriver navegador = new ChromeDriver();
@@ -38,8 +39,8 @@ public class LoginTest {
     @Test
     public void loginSemSucesso() {
         // Usando constantes da massa de dados para email e senha inválidos
-        String emailAddress = MassOfData.EMAIL_INVALIDO;
-        String password = MassOfData.SENHA_INVALIDA;
+        String emailAddress = LoginData.EMAIL_INVALIDO;
+        String password = LoginData.SENHA_INVALIDA;
         String expectedLogin = "Warning: No match for E-Mail Address and/or Password.";
 
         ChromeDriver navegador = new ChromeDriver();

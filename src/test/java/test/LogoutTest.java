@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Checks.LogoutCheck;
+import data.LoginData;
 import pages.LoginPage;
 import pages.LogoutPage;
 
@@ -18,8 +19,8 @@ public class LogoutTest {
 
         LoginPage loginPage = new LoginPage(navegador);
 
-        String emailAddress = "wandersonneivaa@gmail.com";
-        String password = "eumesmo12";
+        String emailAddress = LoginData.EMAIL_VALIDO_2;
+        String password = LoginData.SENHA_VALIDA_2;
         String ExpectedMessage = "Account Logout";
 
         loginPage.acessarAplicacaoWeb();
