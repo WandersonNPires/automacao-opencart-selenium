@@ -4,17 +4,24 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import Checks.ForgottenPasswordCheck;
+import data.MassOfData;
 import pages.ForgottenPasswordPage;
 
 public class ForgottenPasswordTest {
 
+    @BeforeClass
+    public void prepararBanco() {
+        MassOfData.prepararMassa(); 
+    }
+
     @Test
     public void inserindoEmail(){
 
-        String emailAddress= "wandersonneivaa@gmail.com";
+        String emailAddress= MassOfData.EMAIL_VALIDO_3;
         String ExpectedMessege ="text_success";
 
         ChromeDriver navegador = new ChromeDriver();
