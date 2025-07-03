@@ -13,6 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Checks.RegisterCheck;
+import data.MassOfData;
 import pages.RegisterPage;
 
 public class RegisterTest {
@@ -20,9 +21,9 @@ public class RegisterTest {
     @Test
     public void AcessarTelaRegistro() {
 
-        String firstName = "WandersonN";
-        String lastName = "SilvaP";
-        String email = "wandersonneivaa@gmail.com";
+        String firstName = "usuarioNovo";
+        String lastName = "Silva";
+        String email = "Peter@gmail.com";
         String password = "eumesmo12";
         String ExpectedMessenge = "Your Account Has Been Created!";
 
@@ -51,10 +52,10 @@ public class RegisterTest {
     @Test
     public void RegistroEmailJaCadastrado() {
 
-        String firstName = "wanderson";
-        String lastName = "Silva";
-        String email = "wandersonneiva@gmail.com";
-        String password = "eumesmo12";
+        String firstName = MassOfData.FIRST_NAME_VALIDO;
+        String lastName = MassOfData.LAST_NAME_VALIDO;
+        String email = MassOfData.EMAIL_VALIDO;
+        String password = MassOfData.SENHA_VALIDA;
         String ExpectedMessenge = "Warning: E-Mail Address is already registered!";
 
         ChromeDriver navegador = new ChromeDriver();
