@@ -2,14 +2,20 @@ package test;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import Checks.LogoutCheck;
-import data.LoginData;
+import data.MassOfData;
 import pages.LoginPage;
 import pages.LogoutPage;
 
 public class LogoutTest {
+
+    @BeforeClass
+    public void prepararBanco() {
+        MassOfData.prepararMassa(); // Chama o script PHP uma única vez antes de todos os testes dessa classe
+    }
 
     @Test
     public void realizarLogout() {
@@ -19,8 +25,8 @@ public class LogoutTest {
 
         LoginPage loginPage = new LoginPage(navegador);
 
-        String emailAddress = LoginData.EMAIL_VALIDO_2;
-        String password = LoginData.SENHA_VALIDA_2;
+        String emailAddress = MassOfData.EMAIL_VALIDO_2;
+        String password = MassOfData.SENHA_VALIDA_2;
         String ExpectedMessage = "Account Logout";
 
         loginPage.acessarAplicacaoWeb();
