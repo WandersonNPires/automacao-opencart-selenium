@@ -8,18 +8,26 @@ Utilize o **Vscode** para abrir o projeto e ter acesso as automações realizada
 
 ---
 
-## 💻 Ferramentas Utilizadas
+## ⚙️ Instalação e Configuração XAMPP e OpenCart
 
-- ☕ Java  
+
+
+---
+
+
+## 💻 Ferramentas Utilizadas
+ 
 - 🐙 Git  
 - 🖥️ VSCode  
 - 🛠️ XAMPP  
 
 ---
 
-## 📦 Dependências Utilizadas
+## 📦 Dependências  e Liguagens utilizadas
 
-- 📜 JavaScript  
+- 📜 JavaScript
+- 🐘 PHP
+- ☕ Java 
 - ✅ TestNG  
 - 🚀 Maven  
 - 🌐 Selenium WebDriver  
@@ -116,6 +124,5 @@ Foi criada uma pasta **documentos**, onde as evidências dos testes serão aloca
 
 ---
 
-## ⚙️ Instalação e Configuração XAMPP
 
 
