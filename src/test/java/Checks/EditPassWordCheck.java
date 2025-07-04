@@ -15,7 +15,7 @@ public class EditPassWordCheck extends PageBase {
     }
 
     public String mudarSenhaSucesso() {
-        // Espera até o elemento estar presente no DOM (não necessariamente visível)
+        
         WebDriverWait wait = new WebDriverWait(navegador, 15);
         WebElement alerta = wait.until(ExpectedConditions.presenceOfElementLocated(
             By.xpath("//div[contains(@class, 'alert') and contains(@class, 'alert-success')]")
