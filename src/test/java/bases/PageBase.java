@@ -15,6 +15,13 @@ public class PageBase {
     }
 
     
+protected void acessarAplicaca(){
+    String url = "http://localhost/opencart/index.php?route=account/login&language=en-gb";
+        navegador.get(url);
+}
+
+
+
     protected void preencherCampo(By by, String valor) {
         navegador.findElement(by).sendKeys(valor);
     }
@@ -47,6 +54,7 @@ public class PageBase {
 
     return textoAlerta;
 }
+
 
 
 
