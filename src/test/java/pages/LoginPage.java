@@ -14,8 +14,7 @@ public class LoginPage extends PageBase{
     }
 
     public void acessarAplicacaoWeb() {
-       String url = "http://localhost/opencart/index.php?route=account/login&language=en-gb";
-        navegador.get(url);
+       acessarAplicaca();
     }
 
 
