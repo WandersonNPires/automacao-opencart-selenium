@@ -13,8 +13,7 @@ public class EditPassWordAccountPage extends PageBase {
     }
 
     public void acessarTelaLogin() {
-        String url = "http://localhost/opencart/index.php?route=account/login&language=en-gb";
-        navegador.get(url);
+       acessarAplicaca();
 
     }
 
@@ -29,16 +28,16 @@ public class EditPassWordAccountPage extends PageBase {
         clicar(By.xpath("//a[contains(text(), 'Change your password')]"));
     }
 
-    public void inserirNovaSenha(String password){
+    public void inserirNovaSenha(String SENHA_VALIDA_3){
          WebElement campoEmail = navegador.findElement(By.id("input-password"));
         campoEmail.clear();
-        campoEmail.sendKeys(password);
+        campoEmail.sendKeys(SENHA_VALIDA_3);
        
     }
 
-    public void inserirConfirmacaoSenha(String password){
+    public void inserirConfirmacaoSenha(String SENHA_VALIDA_3){
 
-        preencherCampo(By.id("input-confirm"), password);
+        preencherCampo(By.id("input-confirm"), SENHA_VALIDA_3);
     }
 
 
