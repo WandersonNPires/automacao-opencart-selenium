@@ -23,7 +23,7 @@ public class MassOfData {
     public static final String SENHA_VALIDA_3 = "senha4senha123";
 
     public static final String FIRST_NAME_VALIDO_4 = "WandersonN";
-    public static final String LAST_NAME_VALIDO_4 = "SilvaP";
+    public static final String LAST_NAME_VALIDO_4 = "SilvaN";
     public static final String EMAIL_VALIDO_4 = "wandersonneivaa@gmail.com";
     public static final String SENHA_VALIDA_4 = "eumesmo12";
 
