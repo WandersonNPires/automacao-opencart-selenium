@@ -14,7 +14,7 @@ public class LoginTest {
 
     @BeforeClass
     public void prepararBanco() {
-        MassOfData.prepararMassa(); // Chama o script PHP uma única vez antes de todos os testes dessa classe
+        MassOfData.prepararMassa(); 
     }
 
     @Test
