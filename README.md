@@ -10,7 +10,9 @@ Utilize o **Vscode** para abrir o projeto e ter acesso as automações realizada
 
 ## ⚙️ Instalação e Configuração XAMPP e OpenCart
 
+OBS: Foi realizado o teste em hambitente local devido a aplicação "https://demo.opencart.com/" tem um Cloundflare bot protection e não e possível automatizar quando existe esse bloqueio.
 
+ 
 
 ---
 
