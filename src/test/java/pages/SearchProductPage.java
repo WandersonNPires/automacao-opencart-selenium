@@ -66,5 +66,24 @@ public class SearchProductPage extends PageBase {
             }
 
         }
+
     }
-}
+
+      public void acessarProdutoInexistente(){
+
+         WebDriverWait wait = new WebDriverWait(navegador, 10); //
+
+        WebElement menuDesktops = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//a[contains(text(),'Laptops & Notebooks') and contains(@class,'dropdown-toggle')]")));
+        new Actions(navegador).moveToElement(menuDesktops).perform();
+
+        WebElement showAllLink = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//a[text()='Macs (0)']")));
+
+        showAllLink.click();
+    }
+            
+        }
+
+      
+

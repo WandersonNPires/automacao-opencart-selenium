@@ -52,15 +52,15 @@ public class SearchProductTest {
     @Test
     public void acessarLaptopseNotebooks() {
 
-
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
         serachProtucPage.acessarAplicacaoWeb();
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarLaptopseNotebooks();
+
         SearchProductCheck LaptopsEnotebooks = new SearchProductCheck(navegador);
         String mensagemEsperada = LaptopsEnotebooks.validarLaptops();
-        Assert.assertTrue( mensagemEsperada.contains("Shop Laptop feature only the best laptop deals on the market."));
+        Assert.assertTrue(mensagemEsperada.contains("Shop Laptop feature only the best laptop deals on the market."));
     }
 
     @Test
@@ -71,9 +71,24 @@ public class SearchProductTest {
         serachProtucPage.acessarAplicacaoWeb();
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarComponentesEmonitores();
+
         SearchProductCheck monitores = new SearchProductCheck(navegador);
         String mensagemEsperada = monitores.validarMonitors();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+    }
+
+    @Test
+    public void acessarprodutoIndisponivel() {
+
+       
+        SearchProductPage searchProductPage = new SearchProductPage(navegador);
+        searchProductPage.acessarAplicacaoWeb();
+        searchProductPage.acessarProdutoInexistente();
+
+        SearchProductCheck macs = new SearchProductCheck(navegador);
+        String mensagemEsperada = macs.validarProdutoInexistente();
+        Assert.assertTrue(mensagemEsperada.contains("There are no products to list in this category."));
+
     }
 
 }

@@ -25,6 +25,12 @@ public class SearchProductCheck  extends PageBase{
     }
 
 
+    public String validarProdutoInexistente(){
+        return obterTexto(By.xpath("//div[@id='content']//p[contains(text(), 'There are no products to list in this category.')]"));
+
+    }
+
+
 
     
 }
