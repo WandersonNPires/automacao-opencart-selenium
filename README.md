@@ -56,7 +56,6 @@ Foi criada uma pasta **documentos**, onde as evidências dos testes serão aloca
 ### 🔍 Busca de Produtos
 - Buscar produto existente e validar resultado
 - Buscar produto inexistente e validar mensagem
-- Verificar sugestão de auto-complete
 - Validar filtro por categorias e ordem
 
 ---
