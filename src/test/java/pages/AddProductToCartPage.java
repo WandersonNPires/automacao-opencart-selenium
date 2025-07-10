@@ -36,21 +36,26 @@ public class AddProductToCartPage  extends PageBase{
 
     }
 
-    public void clicarNoCarrinhoDeCompra(){
-       By by = By.xpath("//button[i[contains(@class, 'fa-shopping-cart')]]");
+    public void clicarNoCarrinhoDeCompra() {
+    WebDriverWait wait = new WebDriverWait(navegador, 15);
+    By by = By.xpath("//button[i[contains(@class, 'fa-shopping-cart')]]");
 
-    WebDriverWait wait = new WebDriverWait(navegador, 10);
+    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".alert-success")));
 
-    WebElement elemento = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    WebElement elemento = wait.until(ExpectedConditions.elementToBeClickable(by));
 
     Actions actions = new Actions(navegador);
-    actions.moveToElement(elemento).perform();
+    actions.moveToElement(elemento).click().perform();
 
-    wait.until(ExpectedConditions.elementToBeClickable(by));
-
-    elemento.click();
+    wait.until(ExpectedConditions.visibilityOfElementLocated(
+        By.xpath("//div[contains(@class, 'alert') and contains(@class, 'alert-success')]")
+    ));
 }
 
-        }
+
+  
+}
+
+        
 
 
