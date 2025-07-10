@@ -14,52 +14,39 @@ public class PageBase {
         this.navegador = navegador;
     }
 
-    
-protected void acessarAplicaca(){
-    String url = "http://localhost/opencart/index.php?route=account/login&language=en-gb";
+    protected void acessarAplicaca() {
+        String url = "http://localhost/opencart/index.php?route=account/login&language=en-gb";
         navegador.get(url);
-}
-
-
+    }
 
     protected void preencherCampo(By by, String valor) {
         navegador.findElement(by).sendKeys(valor);
     }
 
-
     protected void clicar(By by) {
-        navegador.findElement(by).click();
+         navegador.findElement(by).click();
+
     }
 
     protected String obterTexto(By by) {
-       // return navegador.findElement(by).getText();
-       WebDriverWait wait = new WebDriverWait(navegador, 10); // como você fez
-    WebElement elemento = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-    return elemento.getText();
+        // return navegador.findElement(by).getText();
+        WebDriverWait wait = new WebDriverWait(navegador, 10); // como você fez
+        WebElement elemento = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        return elemento.getText();
     }
 
+    protected String alerta(By by) {
 
-    protected String alerta(By by){
-       
-    WebDriverWait wait = new WebDriverWait(navegador, 10);
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
 
-    WebElement alerta = wait.until(ExpectedConditions.visibilityOfElementLocated(
-        By.xpath("//div[contains(@class, 'alert-danger')]")
-    ));
+        WebElement alerta = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@class, 'alert-danger')]")));
 
-    String textoAlerta = alerta.getText();
+        String textoAlerta = alerta.getText();
 
-   
-    wait.until(ExpectedConditions.invisibilityOf(alerta));
+        wait.until(ExpectedConditions.invisibilityOf(alerta));
 
-    return textoAlerta;
+        return textoAlerta;
+    }
+
 }
-
-
-
-
-    }
-
-
-
-
