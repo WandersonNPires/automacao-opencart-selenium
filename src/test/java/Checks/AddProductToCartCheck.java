@@ -25,5 +25,10 @@ public class AddProductToCartCheck extends PageBase{
 
     }
 
+    public String validarQuantidadeNoCarrinho(){
+        return obterTexto(By.xpath("//div[@id='cart']//td[contains(@class, 'text-end') and contains(text(), 'x')]"));
+
+    }
+
     
 }

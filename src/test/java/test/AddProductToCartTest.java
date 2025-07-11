@@ -38,13 +38,31 @@ public class AddProductToCartTest {
         addProductToCartPage.acessarAplicacaoWeb();
         addProductToCartPage.acessarMac();
         addProductToCartPage.clicarNoCarrinhoDeCompra();
+
         AddProductToCartCheck adicionaCarrinho = new AddProductToCartCheck(navegador);
         String menssagemEsperada = adicionaCarrinho.validandoProdutoInclusoNoCarrinho();
         String expectedMessage = "Success: You have added iMac to your shopping cart!";
         Assert.assertEquals(menssagemEsperada, expectedMessage);
 
+        addProductToCartPage.abrirCarrinhoComProdutos();
 
-        
+        AddProductToCartCheck validarQuatidadeCarrinho = new AddProductToCartCheck(navegador);
+        String mensssagemEsperada = validarQuatidadeCarrinho.validarQuantidadeNoCarrinho();
+        String expextedMessage2 ="x 1";
+        Assert.assertEquals(mensssagemEsperada, expextedMessage2);
+
+        addProductToCartPage.clicarNoCarrinhoDeCompra();
+
+        AddProductToCartCheck adicionaCarrinho2 = new AddProductToCartCheck(navegador);
+        String menssagemEsperada2 = adicionaCarrinho2.validandoProdutoInclusoNoCarrinho();
+        String expectedMessage2 = "Success: You have added iMac to your shopping cart!";
+        Assert.assertEquals(menssagemEsperada2, expectedMessage2);
+
+        addProductToCartPage.abrirCarrinhoComProdutos();
+        AddProductToCartCheck validarQuatidadeCarrinho2 = new AddProductToCartCheck(navegador);
+        String mensssagemEsperada2 = validarQuatidadeCarrinho2.validarQuantidadeNoCarrinho();
+        String expextedMessage3 ="x 2";
+        Assert.assertEquals(mensssagemEsperada2, expextedMessage3);
         
 
     }
