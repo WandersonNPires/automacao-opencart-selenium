@@ -52,17 +52,26 @@ public class AddProductToCartPage extends PageBase {
                 By.xpath("//div[contains(@class, 'alert') and contains(@class, 'alert-success')]")));
     }
 
-   public void abrirCarrinhoComProdutos() {
-    WebDriverWait wait = new WebDriverWait(navegador, 15);
-    By botaoExibirProdutos = By.xpath("//*[@id='cart']/div/button");
+    public void abrirCarrinhoComProdutos() {
+        WebDriverWait wait = new WebDriverWait(navegador, 15);
+        By botaoExibirProdutos = By.xpath("//*[@id='cart']/div/button");
 
-    
-    WebElement botao = wait.until(ExpectedConditions.elementToBeClickable(botaoExibirProdutos));
+        WebElement botao = wait.until(ExpectedConditions.elementToBeClickable(botaoExibirProdutos));
 
+        Actions actions = new Actions(navegador);
+        actions.moveToElement(botao).click().perform();
+    }
 
-    Actions actions = new Actions(navegador);
-    actions.moveToElement(botao).click().perform();
-}
+    public void removerCarrinhoDeCompra() {
+        clicar(By.xpath("//div[@id='cart']//table//tr//td//form/button"));
 
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector(".alert-success")));
+
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector(".alert-success")));
+
+    }
 
 }
