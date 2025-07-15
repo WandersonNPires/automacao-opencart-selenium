@@ -2,9 +2,9 @@
 
 ## 📂 Acessando o Projeto
 
-Realize a instalação do **Git** na máquina para que seja possível clonar o projeto criado.  
-Necessário a instalação do **Java** (versão utilizada: `11.0.26`).
-Utilize o **Vscode** para abrir o projeto e ter acesso as automações realizadas.
+-Realize a instalação do **Git** na máquina para que seja possível clonar o projeto criado.  
+-Necessário a instalação do **Java** (versão utilizada: `11.0.26`).
+-Utilize o **Vscode** para abrir o projeto e ter acesso as automações realizadas.
 
 ---
 
@@ -74,11 +74,11 @@ Foi criada uma pasta **documentos**, onde as evidências dos testes serão aloca
 - Atualizar quantidade e validar total
 - Finalizar compra com carrinho vazio
 - Validar cálculo de subtotal e total
+- Visualizar Carrinho
 
 ---
 
 ### 🛍️ Checkout
-- Finalizar compra como visitante
 - Finalizar compra como usuário logado
 - Verificar erros ao omitir dados obrigatórios
 - Validar seleção de pagamento e envio
