@@ -52,4 +52,13 @@ public class AddProductToCartCheck extends PageBase {
 
     }
 
+    public String visualizarCarrinho(){
+        return obterTexto(By.tagName("h1"));
+
+    }
+
+    public String visualizarCarrinhoComProduto(){
+        return obterTexto(By.xpath("//div[@id='output-cart']//td[2]//ul/li/small"));
+    }
+
 }

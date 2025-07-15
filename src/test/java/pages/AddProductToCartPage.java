@@ -74,4 +74,9 @@ public class AddProductToCartPage extends PageBase {
 
     }
 
+    public void acessarCarrinhoDeCompras(){
+        clicar(By.xpath("//div[@id='cart']//a[contains(@href, 'route=checkout/cart')]//strong/i"));
+
+    }
+
 }

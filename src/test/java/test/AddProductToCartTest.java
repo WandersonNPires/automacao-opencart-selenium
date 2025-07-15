@@ -116,5 +116,28 @@ public class AddProductToCartTest {
         Assert.assertEquals(mensagemEsperada2, expectedmessange2);
 
     }
+    @Test
+    public void visualizarCarrinho(){
+        AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
+        addProductToCartPage.acessarAplicacaoWeb();
+        addProductToCartPage.acessarMac();
+        addProductToCartPage.clicarNoCarrinhoDeCompra();
+        addProductToCartPage.abrirCarrinhoComProdutos();
+        addProductToCartPage.acessarCarrinhoDeCompras();
+
+        AddProductToCartCheck visualizarCarrinho = new AddProductToCartCheck(navegador);
+        String mensagemEsperada= visualizarCarrinho.visualizarCarrinho();
+        String expectedMessage ="Shopping Cart (5.00kg)";
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        AddProductToCartCheck carrinhoComProduto = new AddProductToCartCheck(navegador);
+        String mensagemEsperada2 = carrinhoComProduto.visualizarCarrinhoComProduto();
+        String expectedMessage2 ="- Model: Product 14";
+        Assert.assertEquals(mensagemEsperada2, expectedMessage2);
+
+
+
+        
+    }
 
 }
