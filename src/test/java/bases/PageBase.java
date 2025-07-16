@@ -30,7 +30,7 @@ public class PageBase {
 
     protected String obterTexto(By by) {
         // return navegador.findElement(by).getText();
-        WebDriverWait wait = new WebDriverWait(navegador, 10); // como você fez
+        WebDriverWait wait = new WebDriverWait(navegador, 10); 
         WebElement elemento = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return elemento.getText();
     }
