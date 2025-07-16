@@ -34,7 +34,6 @@ public class CheckoutPage extends PageBase {
         ExpectedConditions.elementToBeClickable(by)
     ));
 
-    
     new Actions(navegador).moveToElement(element).click().perform();
 }
 
