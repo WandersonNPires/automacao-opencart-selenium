@@ -88,7 +88,6 @@ public class AddProductToCartTest {
     @Test
     public void validarTotalCarrinho(){
         AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
-        addProductToCartPage.acessarAplicacaoWeb();
         addProductToCartPage.acessarMac();
         addProductToCartPage.clicarNoCarrinhoDeCompra();
         

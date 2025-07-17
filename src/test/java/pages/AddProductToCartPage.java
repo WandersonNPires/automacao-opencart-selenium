@@ -1,5 +1,7 @@
 package pages;
 
+import java.sql.ClientInfoStatus;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -76,6 +78,12 @@ public class AddProductToCartPage extends PageBase {
 
     public void acessarCarrinhoDeCompras(){
         clicar(By.xpath("//div[@id='cart']//a[contains(@href, 'route=checkout/cart')]//strong/i"));
+
+    }
+
+    public void acessarTelaFinalizarCompra(){
+
+     clicar(By.xpath("//a[contains(@href, 'route=checkout/checkout')]"));
 
     }
 
