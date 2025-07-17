@@ -34,6 +34,19 @@ public class SearchProductCheck  extends PageBase{
         return obterTexto(By.tagName("h1"));
     }
 
+    public String validarCelulares(){
+        return obterTexto(By.tagName("h1"));
+    }
+
+    public String validarCameras(){
+        return obterTexto(By.tagName("h1"));
+    }
+    
+    public String validarMp3(){
+        return obterTexto(By.tagName("h1"));
+    }
+    
+
 
 
     

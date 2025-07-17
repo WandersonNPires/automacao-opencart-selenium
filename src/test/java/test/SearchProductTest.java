@@ -93,6 +93,46 @@ public class SearchProductTest {
 
     }
 
+    @Test
+    public void acessarCelulares(){
+        SearchProductPage serachProtucPage = new SearchProductPage(navegador);
+        String expectedMessage ="Phones & PDAs";
+        serachProtucPage.buscarDesktop();
+        serachProtucPage.acessarCelulares();
+
+        SearchProductCheck celulares = new SearchProductCheck(navegador);
+        String mensagemEsperada = celulares.validarCelulares();
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+    }
+
+    @Test
+    public void acessarCameras(){
+        SearchProductPage serachProtucPage = new SearchProductPage(navegador);
+        String expectedMessage ="Cameras";
+        serachProtucPage.buscarDesktop();
+        serachProtucPage.acessarCameras();
+
+        SearchProductCheck cameras = new SearchProductCheck(navegador);
+        String mensagemEsperada = cameras.validarCameras();
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+    }
+
+    @Test
+    public void acessarMp3(){
+        SearchProductPage serachProtucPage = new SearchProductPage(navegador);
+        String expectedMessage ="MP3 Players";
+        serachProtucPage.buscarDesktop();
+        serachProtucPage.acessarMp3();
+
+        SearchProductCheck mp3 = new SearchProductCheck(navegador);
+        String mensagemEsperada = mp3.validarMp3();
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+    }
+
+
+
 
 
     @Test

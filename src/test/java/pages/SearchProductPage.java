@@ -61,6 +61,51 @@ public class SearchProductPage extends PageBase {
         }
     }
 
+    public void acessarCelulares(){
+        By seletor = By.cssSelector("#column-left > div.list-group.mb-3 > a.list-group-item");
+        List<WebElement> links = navegador.findElements(seletor);
+
+        for (WebElement link : links) {
+            if (link.getText().contains("Phones & PDAs")) {
+                link.click();
+                break;
+            }
+        }
+
+    }
+
+    public void acessarCameras(){
+        By seletor = By.cssSelector("#column-left > div.list-group.mb-3 > a.list-group-item");
+        List<WebElement> links = navegador.findElements(seletor);
+
+        for (WebElement link : links) {
+            if (link.getText().contains("Cameras")) {
+                link.click();
+                break;
+            }
+        }
+    }
+
+   
+    public void acessarMp3() {
+    By seletor = By.cssSelector("#column-left > div.list-group.mb-3 > a.list-group-item");
+    WebDriverWait wait = new WebDriverWait(navegador, 10); 
+
+    List<WebElement> links = navegador.findElements(seletor);
+
+    for (WebElement link : links) {
+        if (link.getText().contains("MP3 Players")) {
+            wait.until(ExpectedConditions.visibilityOf(link));
+            wait.until(ExpectedConditions.elementToBeClickable(link));
+
+            Actions actions = new Actions(navegador);
+            actions.moveToElement(link).click().perform();
+            break;
+        }
+    }
+}
+
+
     public void acessarComponentesEmonitores() {
         WebDriverWait wait = new WebDriverWait(navegador, 10);
         WebElement componentsLink = wait.until(ExpectedConditions
