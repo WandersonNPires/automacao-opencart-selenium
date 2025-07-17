@@ -30,6 +30,10 @@ public class SearchProductCheck  extends PageBase{
 
     }
 
+    public String validarTablets(){
+        return obterTexto(By.tagName("h1"));
+    }
+
 
 
     

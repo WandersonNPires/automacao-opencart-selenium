@@ -40,7 +40,7 @@ public class SearchProductTest {
 
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
-        serachProtucPage.acessarAplicacaoWeb();
+      
         serachProtucPage.buscarDesktop();
 
         SearchProductCheck monirtores = new SearchProductCheck(navegador);
@@ -54,7 +54,7 @@ public class SearchProductTest {
 
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
-        serachProtucPage.acessarAplicacaoWeb();
+        
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarLaptopseNotebooks();
 
@@ -68,7 +68,7 @@ public class SearchProductTest {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
         String expectedMessage = "Monitors";
-        serachProtucPage.acessarAplicacaoWeb();
+        
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarComponentesEmonitores();
 
@@ -77,12 +77,30 @@ public class SearchProductTest {
         Assert.assertEquals(mensagemEsperada, expectedMessage);
     }
 
+
+    @Test
+    public void acessarTablets(){
+        SearchProductPage serachProtucPage = new SearchProductPage(navegador);
+
+        String expectedMessage ="Tablets";
+        serachProtucPage.buscarDesktop();
+        serachProtucPage.acessarTablets();
+
+        SearchProductCheck tablet = new SearchProductCheck(navegador);
+        String mensagemEsperada = tablet.validarTablets();
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+
+    }
+
+
+
     @Test
     public void acessarprodutoIndisponivel() {
 
        
         SearchProductPage searchProductPage = new SearchProductPage(navegador);
-        searchProductPage.acessarAplicacaoWeb();
+        
         searchProductPage.acessarProdutoInexistente();
 
         SearchProductCheck macs = new SearchProductCheck(navegador);
@@ -90,5 +108,7 @@ public class SearchProductTest {
         Assert.assertTrue(mensagemEsperada.contains("There are no products to list in this category."));
 
     }
+
+
 
 }

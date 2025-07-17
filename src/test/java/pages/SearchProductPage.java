@@ -49,6 +49,18 @@ public class SearchProductPage extends PageBase {
 
     }
 
+    public void acessarTablets(){
+        By seletor = By.cssSelector("#column-left > div.list-group.mb-3 > a.list-group-item");
+        List<WebElement> links = navegador.findElements(seletor);
+
+        for (WebElement link : links) {
+            if (link.getText().contains("Tablets ")) {
+                link.click();
+                break;
+            }
+        }
+    }
+
     public void acessarComponentesEmonitores() {
         WebDriverWait wait = new WebDriverWait(navegador, 10);
         WebElement componentsLink = wait.until(ExpectedConditions
