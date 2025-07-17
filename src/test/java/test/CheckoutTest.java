@@ -10,6 +10,7 @@ import org.testng.asserts.Assertion;
 
 import Checks.CheckoutCheck;
 import data.MassOfData;
+import pages.AddProductToCartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
 
@@ -45,14 +46,49 @@ public class CheckoutTest {
         Assert.assertEquals(mensagemEsperada, expectedmessage);
 
     }
+    @Test
+    public void realizarCompraEnderecoJaCadastrado() {
 
-    public void realizarCompra() {
+        AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
+
+        addProductToCartPage.acessarMac();
+        addProductToCartPage.clicarNoCarrinhoDeCompra();
+        addProductToCartPage.abrirCarrinhoComProdutos();
+        addProductToCartPage.acessarTelaFinalizarCompra();
 
         CheckoutPage checkoutPage = new CheckoutPage(navegador);
+
+        checkoutPage.selecionarEmailJaCadastrado();
+        checkoutPage.selecionarModoDeEnvio();
+        checkoutPage.confirmarFrete();
+
+        CheckoutCheck validarConfirmacaoFrete = new CheckoutCheck(navegador);
+        String mensagemEsperada = validarConfirmacaoFrete.validarConfirmacaoFreteEnvio();
+        String expectedMessage ="Success: You have changed shipping method!";
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        checkoutPage.selecionarMetodoDePagamento();
+        checkoutPage.confirmarMetodoPagamento();
         
+        CheckoutCheck validarConfirmacaoPagamento = new CheckoutCheck(navegador);
+        String mensagemEsperada2 = validarConfirmacaoPagamento.validarConfirmacaoPagamento();
+        String expectedMessage2 ="Success: You have changed payment method!";
+        Assert.assertEquals(mensagemEsperada2, expectedMessage2);
+
+        checkoutPage.finalizarCompra();
+
+        CheckoutCheck validarCompra = new CheckoutCheck(navegador);
+        String mensagemEsperada3 = validarCompra.validarCompra();
+        String expectedMessage3 ="Your order has been placed!";
+        Assert.assertEquals(mensagemEsperada3, expectedMessage3);
 
 
+    }
 
+
+    @Test
+    public void realizarCompraNovoEdereço(){
+        
     }
 
 }
