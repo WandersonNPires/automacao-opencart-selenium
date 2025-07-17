@@ -40,6 +40,15 @@ public class AddProductToCartCheck extends PageBase {
 
     }
 
+    public String validarMensagemdeRemocaodeItem(){
+        
+        WebDriverWait wait = new WebDriverWait(navegador, 15); 
+    WebElement alerta = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        By.xpath("//*[@id='alert']/div")
+    ));
+    return alerta.getText();
+    }
+
     public String validarTotalCarrinho() {
         
 

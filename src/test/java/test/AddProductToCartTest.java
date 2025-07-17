@@ -79,10 +79,15 @@ public class AddProductToCartTest {
         addProductToCartPage.abrirCarrinhoComProdutos();
         addProductToCartPage.removerCarrinhoDeCompra();
 
+        AddProductToCartCheck validarRemocaoItem = new AddProductToCartCheck(navegador);
+        String mensagemEsperada = validarRemocaoItem.validarMensagemdeRemocaodeItem();
+        String expextedMessage= "Success: You have removed an item from your shopping cart!";
+        Assert.assertEquals(mensagemEsperada, expextedMessage);
+
         AddProductToCartCheck validarRemocao = new AddProductToCartCheck(navegador);
-        String mensagemEsperada = validarRemocao.validarRemoçãoDoCarrinho();
-        String expectedMessage = "Your shopping cart is empty!";
-        Assert.assertEquals(mensagemEsperada, expectedMessage);
+        String mensagemEsperada2 = validarRemocao.validarRemoçãoDoCarrinho();
+        String expectedMessage2 = "Your shopping cart is empty!";
+        Assert.assertEquals(mensagemEsperada2, expectedMessage2);
 
     }
     @Test
