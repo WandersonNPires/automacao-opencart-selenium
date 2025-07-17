@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import bases.PageBase;
@@ -40,52 +41,61 @@ public class CheckoutPage extends PageBase {
         clicar(By.xpath("//*[@id=\"input-shipping-address\"]/option[2]"));
     }
 
+    public void confirmanovoEmail() {
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
+
+        WebElement botao = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-shipping-address")));
+
+        botao.click();
+    }
+
     public void selecionarModoDeEnvio() {
         clicar(By.xpath("//*[@id=\"button-shipping-methods\"]"));
     }
 
-public void confirmarFrete() {
-    WebDriverWait wait = new WebDriverWait(navegador, 10); 
+    public void confirmarFrete() {
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
 
-    // Espera o alerta sumir, se estiver visível
-    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".alert")));
-   //botão pronto para clicar
-    WebElement botao = wait.until(
-        ExpectedConditions.elementToBeClickable(By.id("button-shipping-method"))
-    );
+        // Espera o alerta sumir, se estiver visível
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".alert")));
+        // botão pronto para clicar
+        WebElement botao = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("button-shipping-method")));
 
-    botao.click();
-}
+        botao.click();
+    }
 
-    public void selecionarMetodoDePagamento(){
+    public void selecionarMetodoDePagamento() {
         clicar(By.xpath("//*[@id=\"button-payment-methods\"]"));
     }
 
-    public void confirmarMetodoPagamento(){
-        WebDriverWait wait = new WebDriverWait(navegador, 10); 
+    public void confirmarMetodoPagamento() {
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
 
-    // Espera o alerta sumir, se estiver visível
-    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".alert")));
-   //botão pronto para clicar
-    WebElement botao = wait.until(
-        ExpectedConditions.elementToBeClickable(By.id("button-payment-method"))
-    );
+        // Espera o alerta sumir, se estiver visível
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".alert")));
+        // botão pronto para clicar
+        WebElement botao = wait.until(
+                ExpectedConditions.elementToBeClickable(By.id("button-payment-method")));
 
-    botao.click();
+        botao.click();
     }
 
-    public void finalizarCompra(){
+    public void finalizarCompra() {
 
-           WebDriverWait wait = new WebDriverWait(navegador, 10);
-    WebElement botao = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-confirm")));
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
+        WebElement botao = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-confirm")));
 
-    // Hover no botão para forçar rolagem
-    new Actions(navegador).moveToElement(botao).perform();
+        // Hover no botão para forçar rolagem
+        new Actions(navegador).moveToElement(botao).perform();
 
-    // Clicar
-    botao.click();
+        // Clicar
+        botao.click();
     }
 
+    public void inserirNovoEndereco() {
+        clicar(By.xpath("//*[@id='shipping-addresses']/div[2]/label"));
+    }
 
     public void inserirPrimeiroNome(String FIRST_NAME_VALIDO) {
         preencherCampo(By.id("input-shipping-firstname"), FIRST_NAME_VALIDO);
@@ -114,6 +124,18 @@ public void confirmarFrete() {
 
     public void inseirCodigoPostal(String postCode) {
         preencherCampo(By.id("input-shipping-postcode"), postCode);
+    }
+
+    public void selecionarPais() {
+        WebElement dropdown = navegador.findElement(By.xpath("//*[@id='input-shipping-country']"));
+        Select select = new Select(dropdown);
+        select.selectByValue("30");
+    }
+
+    public void selecionarRegiao() {
+        WebElement dropdown = navegador.findElement(By.xpath("//*[@id='input-shipping-zone']"));
+        Select select = new Select(dropdown);
+        select.selectByValue("452");
     }
 
 }
