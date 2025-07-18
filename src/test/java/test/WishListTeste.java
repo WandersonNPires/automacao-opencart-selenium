@@ -10,6 +10,7 @@ import Checks.WiishListCheck;
 import data.MassOfData;
 import pages.LoginPage;
 import pages.WishListPage;
+import utils.Report;
 
 public class WishListTeste {
 
@@ -43,6 +44,12 @@ public class WishListTeste {
        WiishListCheck listaDesejo = new WiishListCheck(navegador);
        String mensagemEsperda = listaDesejo.telaDesejoAcessada();
        Assert.assertEquals(mensagemEsperda, expextedMessege);
+
+       String nomePasta ="WishTestDocuments";
+       String nomeTeste ="AcessarTelaDeDesejo";
+
+       Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+       Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
 
         
