@@ -67,7 +67,12 @@ public class SearchProductTest {
         String mensagemEsperada = LaptopsEnotebooks.validarLaptops();
         Assert.assertTrue(mensagemEsperada.contains("Shop Laptop feature only the best laptop deals on the market."));
 
-        
+        String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarLaptopseNotebooks";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
     }
 
     @Test
@@ -82,6 +87,13 @@ public class SearchProductTest {
         SearchProductCheck monitores = new SearchProductCheck(navegador);
         String mensagemEsperada = monitores.validarMonitors();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarMonitores";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+        
     }
 
     @Test
@@ -96,6 +108,12 @@ public class SearchProductTest {
         String mensagemEsperada = tablet.validarTablets();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarTablets";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
     }
 
     @Test
@@ -108,6 +126,12 @@ public class SearchProductTest {
         SearchProductCheck celulares = new SearchProductCheck(navegador);
         String mensagemEsperada = celulares.validarCelulares();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarCelulares";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
     }
 
     @Test
@@ -120,6 +144,12 @@ public class SearchProductTest {
         SearchProductCheck cameras = new SearchProductCheck(navegador);
         String mensagemEsperada = cameras.validarCameras();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+         String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarCameras";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
     }
 
@@ -134,6 +164,12 @@ public class SearchProductTest {
         String mensagemEsperada = mp3.validarMp3();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+         String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarMp3";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
     }
 
     @Test
@@ -146,6 +182,12 @@ public class SearchProductTest {
         SearchProductCheck macs = new SearchProductCheck(navegador);
         String mensagemEsperada = macs.validarProdutoInexistente();
         Assert.assertTrue(mensagemEsperada.contains("There are no products to list in this category."));
+
+         String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "acessarprodutoIndisponivel";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
     }
 
