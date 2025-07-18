@@ -135,7 +135,8 @@ public class CheckoutPage extends PageBase {
     public void selecionarRegiao() {
         WebElement dropdown = navegador.findElement(By.xpath("//*[@id='input-shipping-zone']"));
         Select select = new Select(dropdown);
-        select.selectByValue("452");
+        select.selectByValue("454");
     }
+
 
 }

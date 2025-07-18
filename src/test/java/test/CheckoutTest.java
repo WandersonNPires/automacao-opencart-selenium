@@ -99,7 +99,7 @@ public class CheckoutTest {
         String firstName = MassOfData.FIRST_NAME_VALIDO;
         String lastName = MassOfData.LAST_NAME_VALIDO;
         String company = "B2";
-        String address = "Rua nova";
+        String address = "Rua nova2";
         String city = "Belo Horizonte";
         String postCode = "133";
 
@@ -136,9 +136,41 @@ public class CheckoutTest {
         Assert.assertEquals(mensagemEsperada3, expectedMessage3);
 
     }
-
+    @Test
     public void realizarTentativaDeCompraDadosInvalidos(){
-        
+
+         AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
+
+        addProductToCartPage.acessarMac();
+        addProductToCartPage.clicarNoCarrinhoDeCompra();
+        addProductToCartPage.abrirCarrinhoComProdutos();
+        addProductToCartPage.acessarTelaFinalizarCompra();
+
+        CheckoutPage checkoutPage = new CheckoutPage(navegador);
+
+        String firstName = "";
+        String lastName = "";
+        String company = "B2";
+        String address = "Rua nova2";
+        String city = "Belo Horizonte";
+        String postCode = "133";
+
+        checkoutPage.inserirNovoEndereco();
+        checkoutPage.inserirPrimeiroNome(firstName);
+        checkoutPage.inserirUltimoNome(lastName);
+        checkoutPage.inserirEmpresa(company);
+        checkoutPage.inserirEndereco(address);
+        checkoutPage.inserirCidade(city);
+        checkoutPage.inseirCodigoPostal(postCode);
+        checkoutPage.selecionarPais();
+        checkoutPage.selecionarRegiao();
+        checkoutPage.confirmanovoEmail();
+
+        CheckoutCheck dadodInvalidos = new CheckoutCheck(navegador);
+        String mensagemEsperada = dadodInvalidos.validarDadoIvalidos();
+        String expectedMessage ="First Name must be between 1 and 32 characters!";
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
+
     }
 
 }

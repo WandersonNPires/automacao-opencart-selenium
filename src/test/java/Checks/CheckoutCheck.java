@@ -41,4 +41,8 @@ public class CheckoutCheck extends PageBase {
 
     return obterTexto(By.tagName("h1"));
     }
+
+    public String validarDadoIvalidos(){
+      return  obterTexto(By.xpath("//*[@id=\"error-shipping-firstname\"]"));
+    }
 }
