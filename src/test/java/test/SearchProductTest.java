@@ -10,6 +10,7 @@ import Checks.SearchProductCheck;
 import data.MassOfData;
 import pages.LoginPage;
 import pages.SearchProductPage;
+import utils.Report;
 
 public class SearchProductTest {
 
@@ -40,12 +41,17 @@ public class SearchProductTest {
 
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
-      
         serachProtucPage.buscarDesktop();
 
         SearchProductCheck monirtores = new SearchProductCheck(navegador);
         String mensagemEsperada = monirtores.validarDekstops();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        String nomePasta = "SearchProductDocuments";
+        String nomeTeste = "buscarTodosProdutosNaCategotiaDesktops";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
     }
 
@@ -54,13 +60,14 @@ public class SearchProductTest {
 
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
-        
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarLaptopseNotebooks();
 
         SearchProductCheck LaptopsEnotebooks = new SearchProductCheck(navegador);
         String mensagemEsperada = LaptopsEnotebooks.validarLaptops();
         Assert.assertTrue(mensagemEsperada.contains("Shop Laptop feature only the best laptop deals on the market."));
+
+        
     }
 
     @Test
@@ -68,7 +75,7 @@ public class SearchProductTest {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
         String expectedMessage = "Monitors";
-        
+
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarComponentesEmonitores();
 
@@ -77,12 +84,11 @@ public class SearchProductTest {
         Assert.assertEquals(mensagemEsperada, expectedMessage);
     }
 
-
     @Test
-    public void acessarTablets(){
+    public void acessarTablets() {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
 
-        String expectedMessage ="Tablets";
+        String expectedMessage = "Tablets";
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarTablets();
 
@@ -90,13 +96,12 @@ public class SearchProductTest {
         String mensagemEsperada = tablet.validarTablets();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
-
     }
 
     @Test
-    public void acessarCelulares(){
+    public void acessarCelulares() {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
-        String expectedMessage ="Phones & PDAs";
+        String expectedMessage = "Phones & PDAs";
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarCelulares();
 
@@ -106,9 +111,9 @@ public class SearchProductTest {
     }
 
     @Test
-    public void acessarCameras(){
+    public void acessarCameras() {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
-        String expectedMessage ="Cameras";
+        String expectedMessage = "Cameras";
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarCameras();
 
@@ -119,9 +124,9 @@ public class SearchProductTest {
     }
 
     @Test
-    public void acessarMp3(){
+    public void acessarMp3() {
         SearchProductPage serachProtucPage = new SearchProductPage(navegador);
-        String expectedMessage ="MP3 Players";
+        String expectedMessage = "MP3 Players";
         serachProtucPage.buscarDesktop();
         serachProtucPage.acessarMp3();
 
@@ -131,16 +136,11 @@ public class SearchProductTest {
 
     }
 
-
-
-
-
     @Test
     public void acessarprodutoIndisponivel() {
 
-       
         SearchProductPage searchProductPage = new SearchProductPage(navegador);
-        
+
         searchProductPage.acessarProdutoInexistente();
 
         SearchProductCheck macs = new SearchProductCheck(navegador);
@@ -148,7 +148,5 @@ public class SearchProductTest {
         Assert.assertTrue(mensagemEsperada.contains("There are no products to list in this category."));
 
     }
-
-
 
 }
