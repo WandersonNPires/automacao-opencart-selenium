@@ -10,6 +10,7 @@ import data.MassOfData;
 import pages.EditAccountInformationPage;
 import pages.LoginPage;
 import pages.RegisterPage;
+import utils.Report;
 
 public class EditAccountInformationTest {
 
@@ -40,7 +41,7 @@ public class EditAccountInformationTest {
         edit.clicarParaMudarDadosConta();
 
         String novoNome = "WandersonP";
-        String novoUltimoNome ="SilvaP";
+        String novoUltimoNome = "SilvaP";
         String novoEmail = "wandersonneivaP@gmail.com";
         edit.inserirNovosDados(novoNome);
         edit.inserirUltimoNome(novoUltimoNome);
@@ -51,7 +52,13 @@ public class EditAccountInformationTest {
         String mensagemEsperada = contaAlterada.mudarConta();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        String nomePasta = "EditAccountDocuments";
+        String nomeTeste = "editarInformacaoConta";
 
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 }
