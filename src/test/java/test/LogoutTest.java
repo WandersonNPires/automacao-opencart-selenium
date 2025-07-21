@@ -9,6 +9,7 @@ import Checks.LogoutCheck;
 import data.MassOfData;
 import pages.LoginPage;
 import pages.LogoutPage;
+import utils.Report;
 
 public class LogoutTest {
 
@@ -43,6 +44,12 @@ public class LogoutTest {
         String mensagemExibida = logoutSucess.logoutRealizado();
         System.out.println("Mensagem exibida: " + mensagemExibida);
         Assert.assertEquals(mensagemExibida, ExpectedMessage);
+
+        String nomePasta = "LogoutTestDocuments";
+        String nomeTeste = "realizarLogout";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
   
 
     }
