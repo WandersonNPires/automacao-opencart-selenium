@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+import utils.Utils; 
 import data.MassOfData;
 import Checks.LoginCheck;
 import Checks.RegisterCheck;
@@ -76,4 +76,37 @@ public class LoginTest {
 
         navegador.quit();
     }
+
+        // Teste com DatDriven e massa de Dados Dinamica Estruturado
+  @Test(dataProvider = "loginData", dataProviderClass = Utils.class)
+    public void loginDataDrivenTest(String email, String senha, String esperado) {
+        ChromeDriver navegador = new ChromeDriver();
+        navegador.manage().window().maximize();
+
+        LoginPage loginPage = new LoginPage(navegador);
+
+        loginPage.acessarAplicacaoWeb();
+        loginPage.inserirEmailLogin(email);
+        loginPage.inserirPassWordLogin(senha);
+        loginPage.logar();
+
+        if (esperado.equals("My Account")) {
+            LoginCheck loginCheck = new LoginCheck(navegador);
+            String mensagemExibida = loginCheck.loginFeito();
+            Assert.assertEquals(mensagemExibida, esperado);
+        } else {
+            RegisterCheck loginCheck = new RegisterCheck(navegador);
+            String mensagemExibida = loginCheck.capturarAlerta();
+            Assert.assertEquals(mensagemExibida, esperado);
+        }
+
+        navegador.quit();
+    }
 }
+
+
+
+
+
+
+

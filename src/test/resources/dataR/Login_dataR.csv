@@ -1,0 +1,4 @@
+email,password,expected
+maria@example.com,senha4senha123,My Account
+wandersonnnnnn@gmail.com,seumesmo12,Warning: No match for E-Mail Address and/or Password.
+
