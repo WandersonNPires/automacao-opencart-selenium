@@ -9,6 +9,7 @@ import Checks.OrderHistoryCheck;
 import data.MassOfData;
 import pages.LoginPage;
 import pages.OrderHistoryPage;
+import utils.Report;
 
 public class OrderHistoryTest {
 
@@ -42,7 +43,12 @@ public class OrderHistoryTest {
        String  mensagemEsperda  = historico.TelaHistorico();
        Assert.assertEquals(mensagemEsperda, expextedMessege);
 
+        
+        String nomePasta = "RegisterTestDocuments";
+        String nomeTeste = "acessarHistorico";
 
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
 
     }
