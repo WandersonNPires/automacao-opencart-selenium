@@ -100,6 +100,14 @@ public class LoginTest {
             Assert.assertEquals(mensagemExibida, esperado);
         }
 
+         String nomePasta = "LoginTestDocuments";
+        String nomeTeste = "loginDataDrivenTest";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        
+
         navegador.quit();
     }
 }
