@@ -12,96 +12,94 @@
 
 ## ⚙️ Instalação e Configuração XAMPP e OpenCart
 
-##📌 Observação Importante
+## 📌 Observação Importante
 
 Foi realizado o teste em ambiente local, pois a aplicação oficial (https://demo.opencart.com/) possui proteção contra bots via Cloudflare, o que impede a automação.
 
 ---
 
+## 🔧 Requisitos
 
-##🔧 Requisitos
-- XAMPP com Apache e MySQL
+- **XAMPP** com Apache e MySQL  
+- **OpenCart** (versão 4.x)  
+- Navegador moderno (**Chrome**, **Firefox** etc.)  
+- **Git**, **Java 11** e **Maven** instalados  
+- **VSCode** (ou outro editor de código)
 
-- OpenCart (versão 4.x)
+---
 
-- Navegador moderno (Chrome, Firefox etc.)
+## 🪛 Passo a Passo para Instalar o OpenCart Localmente
 
-- Git, Java 11 e Maven instalados
+**1. Instalar o XAMPP**  
+Baixe e instale o XAMPP:  
+👉 https://www.apachefriends.org  
 
-- VSCode (ou outro editor de código)
+Inicie os serviços:  
+✅ **Apache**  
+✅ **MySQL**
 
-##🪛 Passo a Passo para Instalar o OpenCart Localmente
+---
 
-1. Instalar o XAMPP
-Baixe e instale o XAMPP:
-👉 https://www.apachefriends.org
+**2. Baixar o OpenCart**  
+Acesse:  
+👉 https://www.opencart.com/index.php?route=cms/download  
 
-Inicie os serviços:
+Baixe a versão mais recente (ex: `opencart-4.1.0.3.zip`)
 
-✅ Apache
+---
 
-✅ MySQL
+**3. Configurar Diretório Local**  
+Extraia o conteúdo da pasta `upload/` do `.zip` para:  
+`C:\xampp\htdocs\meu-opencart`
 
+Renomeie os seguintes arquivos:  
+- `config-dist.php` → `config.php`  
+- `admin/config-dist.php` → `admin/config.php`
 
-2. Baixar o OpenCart
-Acesse:
-👉 https://www.opencart.com/index.php?route=cms/download
+---
 
-Baixe a versão mais recente (ex: opencart-4.1.0.3.zip)
+**4. Criar o Banco de Dados no phpMyAdmin**  
+Acesse:  
+👉 http://localhost/phpmyadmin  
 
-3. Configurar Diretório Local
-Extraia o conteúdo da pasta upload/ do .zip para:
+Crie um banco de dados com o nome:  
+- `opencart_db`  
 
-C:\xampp\htdocs\meu-opencart
+Defina a collation como:  
+- `utf8mb4_general_ci`
 
-Renomeie os seguintes arquivos:
+---
 
-config-dist.php         → config.php
-admin/config-dist.php   → admin/config.php
+**5. Ativar Extensões Obrigatórias no PHP**  
+No XAMPP, clique em **Config** → **PHP (php.ini)**
 
+Localize e **descomente** (remova o `;`) das linhas:  
+- `extension=gd`  
+- `extension=zip`
 
-4. Criar o Banco de Dados no phpMyAdmin
-Acesse:
-👉 http://localhost/phpmyadmin
+---
 
-Crie um banco de dados com o nome:
+**6. Instalar o OpenCart via Navegador**  
+Acesse:  
+👉 http://localhost/meu-opencart  
 
-opencart_db
-Defina a collation como:
+Siga o assistente de instalação:  
+✅ **Etapa 1:** Aceite os termos de uso  
+✅ **Etapa 2:** Verificação do sistema (todos os itens devem ficar verdes)  
+✅ **Etapa 3:** Preencha os dados do banco de dados e crie o usuário administrador  
+✅ **Etapa 4:** Conclusão da instalação
 
-utf8mb4_general_ci
+---
 
-5. Ativar Extensões Obrigatórias no PHP
-No XAMPP, clique em Config → PHP (php.ini)
+**7. Remover a Pasta de Instalação**  
+Após a instalação, exclua a pasta de instalação para garantir a segurança:  
+`C:\xampp\htdocs\meu-opencart\install`
 
-Localize e descomente (remova o ;) das linhas:
+---
 
-extension=gd
-extension=zip
+## ✅ Acessos
 
-6. Instalar o OpenCart via Navegador
-Acesse:
-👉 http://localhost/meu-opencart
-
-Siga o assistente de instalação:
-
-✅ Etapa 1: Aceite os termos de uso
-
-✅ Etapa 2: Verificação do sistema (todos os itens devem ficar verdes)
-
-✅ Etapa 3: Preencha os dados do banco de dados e crie o usuário administrador
-
-✅ Etapa 4: Conclusão da instalação
-
-
-7. Remover a Pasta de Instalação
-Após a instalação, exclua a pasta de instalação para garantir a segurança:
-
-C:\xampp\htdocs\meu-opencart\install
-
-
-✅ Acessos
-🛒 Loja (frontend):
+🛒 **Loja (frontend):**  
 👉 http://localhost/meu-opencart
 
 ---
