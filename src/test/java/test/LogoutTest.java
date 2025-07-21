@@ -51,7 +51,7 @@ public class LogoutTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
   
-
+        navegador.quit();
     }
 
 }
