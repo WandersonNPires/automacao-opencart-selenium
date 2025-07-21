@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import Checks.ForgottenPasswordCheck;
 import data.MassOfData;
 import pages.ForgottenPasswordPage;
+import utils.Report;
 
 public class ForgottenPasswordTest {
 
@@ -38,10 +39,13 @@ public class ForgottenPasswordTest {
          String mensagemEsperada = sucess.textoSucesso();
          Assert.assertEquals(mensagemEsperada, ExpectedMessege); 
 
-        
+        String nomePasta = "ForgottenPassDocuments";
+        String nomeTeste = "inserindoEmail";
 
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-
+        navegador.quit();
 
 
     }
