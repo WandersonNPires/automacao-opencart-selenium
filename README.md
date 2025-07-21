@@ -18,18 +18,20 @@ Foi realizado o teste em ambiente local, pois a aplicação oficial (https://dem
 
 ---
 
+
 ##🔧 Requisitos
-XAMPP com Apache e MySQL
+- XAMPP com Apache e MySQL
 
-OpenCart (versão 4.x)
+- OpenCart (versão 4.x)
 
-Navegador moderno (Chrome, Firefox etc.)
+- Navegador moderno (Chrome, Firefox etc.)
 
-Git, Java 11 e Maven instalados
+- Git, Java 11 e Maven instalados
 
-VSCode (ou outro editor de código)
+- VSCode (ou outro editor de código)
 
 ##🪛 Passo a Passo para Instalar o OpenCart Localmente
+
 1. Instalar o XAMPP
 Baixe e instale o XAMPP:
 👉 https://www.apachefriends.org
@@ -40,17 +42,12 @@ Inicie os serviços:
 
 ✅ MySQL
 
----
 
 2. Baixar o OpenCart
 Acesse:
 👉 https://www.opencart.com/index.php?route=cms/download
 
 Baixe a versão mais recente (ex: opencart-4.1.0.3.zip)
-
-
----
-
 
 3. Configurar Diretório Local
 Extraia o conteúdo da pasta upload/ do .zip para:
@@ -62,8 +59,6 @@ Renomeie os seguintes arquivos:
 config-dist.php         → config.php
 admin/config-dist.php   → admin/config.php
 
----
-
 
 4. Criar o Banco de Dados no phpMyAdmin
 Acesse:
@@ -71,15 +66,10 @@ Acesse:
 
 Crie um banco de dados com o nome:
 
-
 opencart_db
 Defina a collation como:
 
-
 utf8mb4_general_ci
-
----
-
 
 5. Ativar Extensões Obrigatórias no PHP
 No XAMPP, clique em Config → PHP (php.ini)
@@ -88,9 +78,6 @@ Localize e descomente (remova o ;) das linhas:
 
 extension=gd
 extension=zip
-
----
-
 
 6. Instalar o OpenCart via Navegador
 Acesse:
@@ -106,16 +93,12 @@ Siga o assistente de instalação:
 
 ✅ Etapa 4: Conclusão da instalação
 
----
-
 
 7. Remover a Pasta de Instalação
 Após a instalação, exclua a pasta de instalação para garantir a segurança:
 
 C:\xampp\htdocs\meu-opencart\install
 
-
----
 
 ✅ Acessos
 🛒 Loja (frontend):
