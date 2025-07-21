@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import Checks.RegisterCheck;
 import data.MassOfData;
 import pages.RegisterPage;
+import utils.Report;
 
 public class RegisterTest {
 
@@ -44,6 +45,12 @@ public class RegisterTest {
         RegisterCheck registerSucess = new RegisterCheck(navegador);
         String mensagemExibida = registerSucess.mensagemRegistroComSucesso();
         Assert.assertEquals(mensagemExibida, ExpectedMessenge);
+
+        String nomePasta = "RegisterTestDocuments";
+        String nomeTeste = "AcessarTelaRegistro";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
     }
 
@@ -75,6 +82,13 @@ public class RegisterTest {
         RegisterCheck registerSucess = new RegisterCheck(navegador);
         String mensagemExibida = registerSucess.capturarAlerta();
         Assert.assertEquals(mensagemExibida, ExpectedMessenge);
+
+        
+        String nomePasta = "RegisterTestDocuments";
+        String nomeTeste = "RegistroEmailJaCadastrado";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
     }
 
