@@ -9,12 +9,13 @@ import data.MassOfData;
 import Checks.LoginCheck;
 import Checks.RegisterCheck;
 import pages.LoginPage;
+import utils.Report;
 
 public class LoginTest {
 
     @BeforeClass
     public void prepararBanco() {
-        MassOfData.prepararMassa(); 
+        MassOfData.prepararMassa();
     }
 
     @Test
@@ -37,7 +38,14 @@ public class LoginTest {
         String mensagemExibida = loginsucess.loginFeito();
         Assert.assertEquals(mensagemExibida, expectedLogin);
 
+        String nomePasta = "LoginTestDocuments";
+        String nomeTeste = "acessarTeladeLogin";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
         navegador.quit();
+
     }
 
     @Test
@@ -59,6 +67,12 @@ public class LoginTest {
         RegisterCheck loginNotsucess = new RegisterCheck(navegador);
         String mensagemExibida = loginNotsucess.capturarAlerta();
         Assert.assertEquals(mensagemExibida, expectedLogin);
+
+        String nomePasta = "LoginTestDocuments";
+        String nomeTeste = "loginSemSucesso";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
         navegador.quit();
     }
