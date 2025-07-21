@@ -13,6 +13,7 @@ import data.MassOfData;
 import pages.AddProductToCartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
+import utils.Report;
 
 public class CheckoutTest {
     ChromeDriver navegador;
@@ -44,6 +45,14 @@ public class CheckoutTest {
         String mensagemEsperada = carrinhoVazio.validarCarrinhoVazio();
         String expectedmessage = "Shopping Cart";
         Assert.assertEquals(mensagemEsperada, expectedmessage);
+
+        String nomePasta = "CheckoutDocuments";
+        String nomeTeste = "comprarComCarrinhoVazio";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
@@ -82,6 +91,14 @@ public class CheckoutTest {
         String mensagemEsperada3 = validarCompra.validarCompra();
         String expectedMessage3 = "Your order has been placed!";
         Assert.assertEquals(mensagemEsperada3, expectedMessage3);
+
+        String nomePasta = "CheckoutDocuments";
+        String nomeTeste = "realizarCompraEnderecoJaCadastrado";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
     }
 
     @Test
@@ -135,11 +152,20 @@ public class CheckoutTest {
         String expectedMessage3 = "Your order has been placed!";
         Assert.assertEquals(mensagemEsperada3, expectedMessage3);
 
-    }
-    @Test
-    public void realizarTentativaDeCompraDadosInvalidos(){
+        String nomePasta = "CheckoutDocuments";
+        String nomeTeste = "realizarCompraNovoEdereço";
 
-         AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
+
+    }
+
+    @Test
+    public void realizarTentativaDeCompraDadosInvalidos() {
+
+        AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
 
         addProductToCartPage.acessarMac();
         addProductToCartPage.clicarNoCarrinhoDeCompra();
@@ -168,8 +194,16 @@ public class CheckoutTest {
 
         CheckoutCheck dadodInvalidos = new CheckoutCheck(navegador);
         String mensagemEsperada = dadodInvalidos.validarDadoIvalidos();
-        String expectedMessage ="First Name must be between 1 and 32 characters!";
+        String expectedMessage = "First Name must be between 1 and 32 characters!";
         Assert.assertEquals(mensagemEsperada, expectedMessage);
+
+        String nomePasta = "CheckoutDocuments";
+        String nomeTeste = "realizarTentativaDeCompraDadosInvalidos";
+
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
