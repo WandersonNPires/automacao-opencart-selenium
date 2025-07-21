@@ -9,12 +9,13 @@ import Checks.EditPassWordCheck;
 import data.MassOfData;
 import pages.EditPassWordAccountPage;
 import pages.LoginPage;
+import utils.Report;
 
 public class EditPassWordAccountTeste {
 
     @BeforeClass
     public void prepararBanco() {
-        MassOfData.prepararMassa(); 
+        MassOfData.prepararMassa();
     }
 
     @Test
@@ -22,34 +23,37 @@ public class EditPassWordAccountTeste {
         ChromeDriver navegador = new ChromeDriver();
         navegador.manage().window().maximize();
 
-       
-            LoginPage loginPage = new LoginPage(navegador);
+        LoginPage loginPage = new LoginPage(navegador);
 
-            String emailAddress = MassOfData.EMAIL_VALIDO_4;
-            String password = MassOfData.SENHA_VALIDA_4;
-            String expectedMessage = "Success: Your password has been successfully updated.";
+        String emailAddress = MassOfData.EMAIL_VALIDO_4;
+        String password = MassOfData.SENHA_VALIDA_4;
+        String expectedMessage = "Success: Your password has been successfully updated.";
 
-            loginPage.acessarAplicacaoWeb();
-            loginPage.inserirEmailLogin(emailAddress);
-            loginPage.inserirPassWordLogin(password);
-            loginPage.logar();
+        loginPage.acessarAplicacaoWeb();
+        loginPage.inserirEmailLogin(emailAddress);
+        loginPage.inserirPassWordLogin(password);
+        loginPage.logar();
 
-            EditPassWordAccountPage editAccountPage = new EditPassWordAccountPage(navegador);
+        EditPassWordAccountPage editAccountPage = new EditPassWordAccountPage(navegador);
 
-            editAccountPage.acessarTelaMudarSenha();
-            editAccountPage.clicarEmTrocar();
-            String novaSenha = "senhanova";
-            editAccountPage.inserirNovaSenha(novaSenha);
-            editAccountPage.inserirConfirmacaoSenha(novaSenha);
-            editAccountPage.clicarParaTrocar();
+        editAccountPage.acessarTelaMudarSenha();
+        editAccountPage.clicarEmTrocar();
+        String novaSenha = "senhanova";
+        editAccountPage.inserirNovaSenha(novaSenha);
+        editAccountPage.inserirConfirmacaoSenha(novaSenha);
+        editAccountPage.clicarParaTrocar();
 
-            EditPassWordCheck trocaFeita = new EditPassWordCheck(navegador);
-            String mensagemEsperada = trocaFeita.mudarSenhaSucesso();
-            Assert.assertEquals(mensagemEsperada, expectedMessage);
+        EditPassWordCheck trocaFeita = new EditPassWordCheck(navegador);
+        String mensagemEsperada = trocaFeita.mudarSenhaSucesso();
+        Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        String nomePasta = "EditPassDocuments";
+        String nomeTeste = "editarConta";
 
+        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        } 
-        }
+        navegador.quit();
 
-
+    }
+}
