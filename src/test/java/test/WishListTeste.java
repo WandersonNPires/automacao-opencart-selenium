@@ -51,8 +51,7 @@ public class WishListTeste {
        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-
-        
+       navegador.quit();
 
     }
 
