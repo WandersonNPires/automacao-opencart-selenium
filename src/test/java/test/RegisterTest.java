@@ -52,6 +52,8 @@ public class RegisterTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
+        navegador.quit();
+
     }
 
     
@@ -89,6 +91,8 @@ public class RegisterTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
