@@ -17,7 +17,6 @@
 Foi realizado o teste em ambiente local, pois a aplicação oficial (https://demo.opencart.com/) possui proteção contra bots via Cloudflare, o que impede a automação.
 
 
-
 ## 🔧 Requisitos
 
 - **XAMPP** com Apache e MySQL  
@@ -25,7 +24,6 @@ Foi realizado o teste em ambiente local, pois a aplicação oficial (https://dem
 - Navegador moderno (**Chrome**, **Firefox** etc.)  
 - **Git**, **Java 11** e **Maven** instalados  
 - **VSCode** (ou outro editor de código)
-
 
 
 ## 🪛 Passo a Passo para Instalar o OpenCart Localmente
@@ -39,15 +37,14 @@ Inicie os serviços:
 ✅ **MySQL**
 
 
-
-**2. Baixar o OpenCart**  
+2. Baixar o OpenCart**  
 Acesse:  
 👉 https://www.opencart.com/index.php?route=cms/download  
 
 Baixe a versão mais recente (ex: `opencart-4.1.0.3.zip`)
 
 
-**3. Configurar Diretório Local**  
+3. Configurar Diretório Local**  
 Extraia o conteúdo da pasta `upload/` do `.zip` para:  
 `C:\xampp\htdocs\meu-opencart`
 
@@ -56,8 +53,7 @@ Renomeie os seguintes arquivos:
 - `admin/config-dist.php` → `admin/config.php`
 
 
-
-**4. Criar o Banco de Dados no phpMyAdmin**  
+4. Criar o Banco de Dados no phpMyAdmin**  
 Acesse:  
 👉 http://localhost/phpmyadmin  
 
@@ -68,8 +64,7 @@ Defina a collation como:
 - `utf8mb4_general_ci`
 
 
-
-**5. Ativar Extensões Obrigatórias no PHP**  
+5. Ativar Extensões Obrigatórias no PHP**  
 No XAMPP, clique em **Config** → **PHP (php.ini)**
 
 Localize e **descomente** (remova o `;`) das linhas:  
@@ -77,8 +72,7 @@ Localize e **descomente** (remova o `;`) das linhas:
 - `extension=zip`
 
 
-
-**6. Instalar o OpenCart via Navegador**  
+6. Instalar o OpenCart via Navegador**  
 Acesse:  
 👉 http://localhost/meu-opencart  
 
@@ -89,11 +83,9 @@ Siga o assistente de instalação:
 ✅ **Etapa 4:** Conclusão da instalação
 
 
-
-**7. Remover a Pasta de Instalação**  
+7. Remover a Pasta de Instalação**  
 Após a instalação, exclua a pasta de instalação para garantir a segurança:  
 `C:\xampp\htdocs\meu-opencart\install`
-
 
 
 ## ✅ Acessos
