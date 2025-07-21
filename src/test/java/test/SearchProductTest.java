@@ -53,6 +53,8 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
+        navegador.quit();
+
     }
 
     @Test
@@ -72,6 +74,8 @@ public class SearchProductTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
@@ -93,6 +97,8 @@ public class SearchProductTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
         
     }
 
@@ -114,6 +120,8 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
+        navegador.quit();
+
     }
 
     @Test
@@ -132,6 +140,8 @@ public class SearchProductTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
     }
 
     @Test
@@ -150,6 +160,8 @@ public class SearchProductTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
@@ -170,6 +182,8 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
+        navegador.quit();
+
     }
 
     @Test
@@ -188,6 +202,8 @@ public class SearchProductTest {
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
+
+        navegador.quit();
 
     }
 
