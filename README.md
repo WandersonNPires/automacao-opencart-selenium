@@ -12,7 +12,8 @@
 
 ## ⚙️ Instalação e Configuração XAMPP e OpenCart
 
-OBS: Foi realizado o teste em hambitente local devido a aplicação "https://demo.opencart.com/" tem um Cloundflare bot protection e não e possível automatizar quando existe esse bloqueio.
+⚙️ Instalação e Configuração XAMPP e OpenCart
+⚠️ Atenção: Os testes foram realizados em ambiente local porque o site https://demo.opencart.com/ utiliza proteção Cloudflare Bot, o que impede a automação com Selenium.
 
 🔧 Requisitos
 XAMPP com Apache e MySQL
@@ -26,42 +27,48 @@ Git, Java 11 e Maven instalados
 VSCode (ou outro editor de código)
 
 🪛 Passo a Passo
-1. Instalar o XAMPP
+Instalar o XAMPP
+
 Baixe e instale o XAMPP: https://www.apachefriends.org
 
 Inicie os serviços Apache e MySQL
 
-2. Baixar o OpenCart
+Baixar o OpenCart
+
 Acesse: https://www.opencart.com/index.php?route=cms/download
 
-Baixe a versão mais recente (ex: opencart-4.1.0.3.zip)
+Baixe a versão mais recente (exemplo: opencart-4.1.0.3.zip)
 
-3. Configurar Diretório Local
-Extraia o conteúdo da pasta upload/ do .zip para:
+Configurar Diretório Local
 
+Extraia o conteúdo da pasta upload/ do arquivo ZIP para o diretório:
 C:\xampp\htdocs\meu-opencart
 
 Renomeie os arquivos:
-
-config-dist.php → config.php  
+config-dist.php → config.php
 admin/config-dist.php → admin/config.php
 
-4. Criar Banco de Dados no phpMyAdmin
+Criar Banco de Dados no phpMyAdmin
+
 Acesse: http://localhost/phpmyadmin
 
 Crie um banco de dados com o nome: opencart_db
 
 Defina a collation como: utf8mb4_general_ci
 
-5. Ativar Extensões Obrigatórias no PHP
-No XAMPP, clique em Config → PHP (php.ini)
+Ativar Extensões Obrigatórias no PHP
 
-Descomente (remova o ;) das seguintes linhas:
+No painel do XAMPP, clique em Config > PHP (php.ini)
 
-extension=gd  
+Localize e descomente (remova o ;) das seguintes linhas:
+
+ini
+Copiar
+Editar
+extension=gd
 extension=zip
+Instalar o OpenCart pelo Navegador
 
-6. Instalar o OpenCart pelo Navegador
 Acesse: http://localhost/meu-opencart
 
 Siga o assistente de instalação:
@@ -74,13 +81,15 @@ Etapa 3: Preencha os dados do banco de dados e crie o usuário admin
 
 Etapa 4: Conclusão da instalação
 
-7. Remover a Pasta de Instalação
-Após a conclusão, exclua a pasta:
+Remover a Pasta de Instalação
 
+Após a conclusão, exclua a pasta:
 C:\xampp\htdocs\meu-opencart\install
 
-8. Acesso
+🌐 Acesso
 Loja (frontend): http://localhost/meu-opencart
+
+Admin (backend): http://localhost/meu-opencart/admin
  
 
 ---
