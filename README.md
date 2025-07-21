@@ -87,8 +87,7 @@ Siga o assistente de instalação:
 Após a instalação, exclua a pasta de instalação para garantir a segurança:  
 `C:\xampp\htdocs\meu-opencart\install`
 
-
-## ✅ Acessos
+✅ Acessos
 
 🛒 **Loja (frontend):**  
 👉 http://localhost/meu-opencart
