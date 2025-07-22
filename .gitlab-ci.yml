@@ -19,20 +19,19 @@ test:
 
   script:
     - mvn clean test -DsuiteXmlFile=testngsuite.xml
-    - echo "Conteúdo do diretório atual:"
-    - ls -la
-    - echo "Conteúdo dos diretórios de documentos (se existirem):"
-    - ls -la AddProductDocuments || echo "AddProductDocuments não existe"
-    - ls -la CheckoutDocuments || echo "CheckoutDocuments não existe"
-    - ls -la EditAccountDocuments || echo "EditAccountDocuments não existe"
-    - ls -la EditPassDocuments || echo "EditPassDocuments não existe"
-    - ls -la ForgottenPassDocuments || echo "ForgottenPassDocuments não existe"
-    - ls -la LoginTestDocuments || echo "LoginTestDocuments não existe"
-    - ls -la LogoutTestDocuments || echo "LogoutTestDocuments não existe"
-    - ls -la OrderHistoryDocuments || echo "OrderHistoryDocuments não existe"
-    - ls -la RegisterTestDocuments || echo "RegisterTestDocuments não existe"
-    - ls -la SearchProductDocuments || echo "SearchProductDocuments não existe"
-    - ls -la WishTestDocuments || echo "WishTestDocuments não existe"
+    - echo "Conteúdo do diretório src/test/java/documents:"
+    - ls -la src/test/java/documents/
+    - ls -la src/test/java/documents/AddProductDocuments || echo "AddProductDocuments não existe"
+    - ls -la src/test/java/documents/CheckoutDocuments || echo "CheckoutDocuments não existe"
+    - ls -la src/test/java/documents/EditAccountDocuments || echo "EditAccountDocuments não existe"
+    - ls -la src/test/java/documents/EditPassDocuments || echo "EditPassDocuments não existe"
+    - ls -la src/test/java/documents/ForgottenPassDocuments || echo "ForgottenPassDocuments não existe"
+    - ls -la src/test/java/documents/LoginTestDocuments || echo "LoginTestDocuments não existe"
+    - ls -la src/test/java/documents/LogoutTestDocuments || echo "LogoutTestDocuments não existe"
+    - ls -la src/test/java/documents/OrderHistoryDocuments || echo "OrderHistoryDocuments não existe"
+    - ls -la src/test/java/documents/RegisterTestDocuments || echo "RegisterTestDocuments não existe"
+    - ls -la src/test/java/documents/SearchProductDocuments || echo "SearchProductDocuments não existe"
+    - ls -la src/test/java/documents/WishTestDocuments || echo "WishTestDocuments não existe"
 
   artifacts:
     when: always
