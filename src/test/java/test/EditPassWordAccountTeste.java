@@ -11,6 +11,7 @@ import data.MassOfData;
 import pages.EditPassWordAccountPage;
 import pages.LoginPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class EditPassWordAccountTeste {
@@ -50,6 +51,7 @@ public class EditPassWordAccountTeste {
         String mensagemEsperada = trocaFeita.mudarSenhaSucesso();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        PastasDocuments.criarPastaSeNaoExistir("EditPassDocuments");
         String nomePasta = "EditPassDocuments";
         String nomeTeste = "editarConta";
 

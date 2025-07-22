@@ -12,6 +12,7 @@ import data.MassOfData;
 import pages.LoginPage;
 import pages.SearchProductPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class SearchProductTest {
@@ -49,6 +50,7 @@ public class SearchProductTest {
         String mensagemEsperada = monirtores.validarDekstops();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
         String nomePasta = "SearchProductDocuments";
         String nomeTeste = "buscarTodosProdutosNaCategotiaDesktops";
 
@@ -71,6 +73,7 @@ public class SearchProductTest {
         String mensagemEsperada = LaptopsEnotebooks.validarLaptops();
         Assert.assertTrue(mensagemEsperada.contains("Shop Laptop feature only the best laptop deals on the market."));
 
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
         String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarLaptopseNotebooks";
 
@@ -94,6 +97,7 @@ public class SearchProductTest {
         String mensagemEsperada = monitores.validarMonitors();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
         String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarMonitores";
 
@@ -101,7 +105,7 @@ public class SearchProductTest {
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
         navegador.quit();
-        
+
     }
 
     @Test
@@ -116,6 +120,7 @@ public class SearchProductTest {
         String mensagemEsperada = tablet.validarTablets();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
         String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarTablets";
 
@@ -137,6 +142,7 @@ public class SearchProductTest {
         String mensagemEsperada = celulares.validarCelulares();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
         String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarCelulares";
 
@@ -157,7 +163,8 @@ public class SearchProductTest {
         String mensagemEsperada = cameras.validarCameras();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
-         String nomePasta = "SearchProductDocuments";
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
+        String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarCameras";
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
@@ -178,7 +185,8 @@ public class SearchProductTest {
         String mensagemEsperada = mp3.validarMp3();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
-         String nomePasta = "SearchProductDocuments";
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
+        String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarMp3";
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
@@ -199,7 +207,8 @@ public class SearchProductTest {
         String mensagemEsperada = macs.validarProdutoInexistente();
         Assert.assertTrue(mensagemEsperada.contains("There are no products to list in this category."));
 
-         String nomePasta = "SearchProductDocuments";
+         PastasDocuments.criarPastaSeNaoExistir("SearchProductDocuments");
+        String nomePasta = "SearchProductDocuments";
         String nomeTeste = "acessarprodutoIndisponivel";
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);

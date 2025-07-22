@@ -11,6 +11,7 @@ import data.MassOfData;
 import pages.LoginPage;
 import pages.OrderHistoryPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class OrderHistoryTest {
@@ -45,8 +46,8 @@ public class OrderHistoryTest {
        String  mensagemEsperda  = historico.TelaHistorico();
        Assert.assertEquals(mensagemEsperda, expextedMessege);
 
-        
-        String nomePasta = "RegisterTestDocuments";
+        PastasDocuments.criarPastaSeNaoExistir("OrderHistoryDocuments");
+        String nomePasta = "OrderHistoryDocuments";
         String nomeTeste = "acessarHistorico";
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);

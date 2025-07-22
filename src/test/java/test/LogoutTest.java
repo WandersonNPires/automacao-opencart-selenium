@@ -11,6 +11,7 @@ import data.MassOfData;
 import pages.LoginPage;
 import pages.LogoutPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class LogoutTest {
@@ -47,6 +48,8 @@ public class LogoutTest {
         System.out.println("Mensagem exibida: " + mensagemExibida);
         Assert.assertEquals(mensagemExibida, ExpectedMessage);
 
+
+        PastasDocuments.criarPastaSeNaoExistir("LogoutTestDocuments");
         String nomePasta = "LogoutTestDocuments";
         String nomeTeste = "realizarLogout";
 

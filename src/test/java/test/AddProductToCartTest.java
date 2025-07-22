@@ -13,6 +13,7 @@ import data.MassOfData;
 import pages.AddProductToCartPage;
 import pages.LoginPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class AddProductToCartTest {
@@ -71,6 +72,7 @@ public class AddProductToCartTest {
         String expextedMessage3 = "x 2";
         Assert.assertEquals(mensssagemEsperada2, expextedMessage3);
 
+        PastasDocuments.criarPastaSeNaoExistir("AddProductDocuments");
         String nomePasta = "AddProductDocuments";
         String nomeTeste = "adicionarProdutoNoCarrinho";
 
@@ -102,6 +104,7 @@ public class AddProductToCartTest {
         String expectedMessage2 = "Your shopping cart is empty!";
         Assert.assertEquals(mensagemEsperada2, expectedMessage2);
 
+        PastasDocuments.criarPastaSeNaoExistir("AddProductDocuments");
         String nomePasta = "AddProductDocuments";
         String nomeTeste = "removerProduto";
 
@@ -140,6 +143,7 @@ public class AddProductToCartTest {
         String expectedmessange2 = "$200.00";
         Assert.assertEquals(mensagemEsperada2, expectedmessange2);
 
+        PastasDocuments.criarPastaSeNaoExistir("AddProductDocuments");
         String nomePasta = "AddProductDocuments";
         String nomeTeste = "validarTotalCarrinho";
 
@@ -169,6 +173,7 @@ public class AddProductToCartTest {
         String expectedMessage2 = "- Model: Product 14";
         Assert.assertEquals(mensagemEsperada2, expectedMessage2);
 
+        PastasDocuments.criarPastaSeNaoExistir("AddProductDocuments");
         String nomePasta = "AddProductDocuments";
         String nomeTeste = "visualizarCarrinho";
 

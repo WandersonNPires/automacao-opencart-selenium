@@ -15,6 +15,7 @@ import pages.AddProductToCartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class CheckoutTest {
@@ -27,8 +28,8 @@ public class CheckoutTest {
 
     @BeforeMethod
     public void setup() {
-        
-       ChromeDriver navegador = DriverFactory.createChrome();
+
+        ChromeDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
@@ -49,6 +50,7 @@ public class CheckoutTest {
         String expectedmessage = "Shopping Cart";
         Assert.assertEquals(mensagemEsperada, expectedmessage);
 
+        PastasDocuments.criarPastaSeNaoExistir("CheckoutDocuments");
         String nomePasta = "CheckoutDocuments";
         String nomeTeste = "comprarComCarrinhoVazio";
 
@@ -95,6 +97,7 @@ public class CheckoutTest {
         String expectedMessage3 = "Your order has been placed!";
         Assert.assertEquals(mensagemEsperada3, expectedMessage3);
 
+        PastasDocuments.criarPastaSeNaoExistir("CheckoutDocuments");
         String nomePasta = "CheckoutDocuments";
         String nomeTeste = "realizarCompraEnderecoJaCadastrado";
 
@@ -155,6 +158,7 @@ public class CheckoutTest {
         String expectedMessage3 = "Your order has been placed!";
         Assert.assertEquals(mensagemEsperada3, expectedMessage3);
 
+        PastasDocuments.criarPastaSeNaoExistir("CheckoutDocuments");
         String nomePasta = "CheckoutDocuments";
         String nomeTeste = "realizarCompraNovoEdereço";
 
@@ -200,6 +204,7 @@ public class CheckoutTest {
         String expectedMessage = "First Name must be between 1 and 32 characters!";
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        PastasDocuments.criarPastaSeNaoExistir("CheckoutDocuments");
         String nomePasta = "CheckoutDocuments";
         String nomeTeste = "realizarTentativaDeCompraDadosInvalidos";
 

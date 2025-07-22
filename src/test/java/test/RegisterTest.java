@@ -17,6 +17,7 @@ import Checks.RegisterCheck;
 import data.MassOfData;
 import pages.RegisterPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class RegisterTest {
@@ -48,6 +49,7 @@ public class RegisterTest {
         String mensagemExibida = registerSucess.mensagemRegistroComSucesso();
         Assert.assertEquals(mensagemExibida, ExpectedMessenge);
 
+         PastasDocuments.criarPastaSeNaoExistir("RegisterTestDocuments");
         String nomePasta = "RegisterTestDocuments";
         String nomeTeste = "AcessarTelaRegistro";
 
@@ -87,7 +89,7 @@ public class RegisterTest {
         String mensagemExibida = registerSucess.capturarAlerta();
         Assert.assertEquals(mensagemExibida, ExpectedMessenge);
 
-        
+        PastasDocuments.criarPastaSeNaoExistir("RegisterTestDocuments");
         String nomePasta = "RegisterTestDocuments";
         String nomeTeste = "RegistroEmailJaCadastrado";
 

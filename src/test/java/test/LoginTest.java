@@ -11,6 +11,7 @@ import Checks.LoginCheck;
 import Checks.RegisterCheck;
 import pages.LoginPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class LoginTest {
@@ -40,6 +41,7 @@ public class LoginTest {
         String mensagemExibida = loginsucess.loginFeito();
         Assert.assertEquals(mensagemExibida, expectedLogin);
 
+        PastasDocuments.criarPastaSeNaoExistir("LoginTestDocuments");
         String nomePasta = "LoginTestDocuments";
         String nomeTeste = "acessarTeladeLogin";
 
@@ -70,6 +72,7 @@ public class LoginTest {
         String mensagemExibida = loginNotsucess.capturarAlerta();
         Assert.assertEquals(mensagemExibida, expectedLogin);
 
+        PastasDocuments.criarPastaSeNaoExistir("LoginTestDocuments");
         String nomePasta = "LoginTestDocuments";
         String nomeTeste = "loginSemSucesso";
 
@@ -103,6 +106,7 @@ public class LoginTest {
             Assert.assertEquals(mensagemExibida, esperado);
         }
 
+        PastasDocuments.criarPastaSeNaoExistir("LoginTestDocuments");
         String nomePasta = "LoginTestDocuments";
         String nomeTeste = "loginDataDrivenTest";
 

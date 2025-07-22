@@ -12,6 +12,7 @@ import data.MassOfData;
 import pages.LoginPage;
 import pages.WishListPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class WishListTeste {
@@ -48,6 +49,8 @@ public class WishListTeste {
        WiishListCheck listaDesejo = new WiishListCheck(navegador);
        String mensagemEsperda = listaDesejo.telaDesejoAcessada();
        Assert.assertEquals(mensagemEsperda, expextedMessege);
+
+    PastasDocuments.criarPastaSeNaoExistir("WishTestDocuments");
 
        String nomePasta ="WishTestDocuments";
        String nomeTeste ="AcessarTelaDeDesejo";

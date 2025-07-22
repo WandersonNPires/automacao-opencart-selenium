@@ -12,6 +12,7 @@ import Checks.ForgottenPasswordCheck;
 import data.MassOfData;
 import pages.ForgottenPasswordPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class ForgottenPasswordTest {
@@ -41,6 +42,7 @@ public class ForgottenPasswordTest {
         String mensagemEsperada = sucess.textoSucesso();
         Assert.assertEquals(mensagemEsperada, ExpectedMessege);
 
+        PastasDocuments.criarPastaSeNaoExistir("ForgottenPassDocuments");
         String nomePasta = "ForgottenPassDocuments";
         String nomeTeste = "inserindoEmail";
 

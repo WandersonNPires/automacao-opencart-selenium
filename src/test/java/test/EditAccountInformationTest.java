@@ -12,6 +12,7 @@ import pages.EditAccountInformationPage;
 import pages.LoginPage;
 import pages.RegisterPage;
 import utils.DriverFactory;
+import utils.PastasDocuments;
 import utils.Report;
 
 public class EditAccountInformationTest {
@@ -55,6 +56,7 @@ public class EditAccountInformationTest {
         String mensagemEsperada = contaAlterada.mudarConta();
         Assert.assertEquals(mensagemEsperada, expectedMessage);
 
+        PastasDocuments.criarPastaSeNaoExistir("EditAccountDocuments");
         String nomePasta = "EditAccountDocuments";
         String nomeTeste = "editarInformacaoConta";
 
