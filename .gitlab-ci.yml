@@ -38,15 +38,15 @@ test:
     when: always
     paths:
       - target/surefire-reports/
-      - AddProductDocuments/
-      - CheckoutDocuments/
-      - EditAccountDocuments/
-      - EditPassDocuments/
-      - ForgottenPassDocuments/
-      - LoginTestDocuments/
-      - LogoutTestDocuments/
-      - OrderHistoryDocuments/
-      - RegisterTestDocuments/
-      - SearchProductDocuments/
-      - WishTestDocuments/
+      - src/test/java/documents/AddProductDocuments/
+      - src/test/java/documents/CheckoutDocuments/
+      - src/test/java/documents/EditAccountDocuments/
+      - src/test/java/documents/EditPassDocuments/
+      - src/test/java/documents/ForgottenPassDocuments/
+      - src/test/java/documents/LoginTestDocuments/
+      - src/test/java/documents/LogoutTestDocuments/
+      - src/test/java/documents/OrderHistoryDocuments/
+      - src/test/java/documents/RegisterTestDocuments/
+      - src/test/java/documents/SearchProductDocuments/
+      - src/test/java/documents/WishTestDocuments/
     expire_in: 1 week
