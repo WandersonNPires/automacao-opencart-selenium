@@ -1,14 +1,16 @@
 package test;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.Utils; 
+import utils.Utils;
 import data.MassOfData;
 import Checks.LoginCheck;
 import Checks.RegisterCheck;
 import pages.LoginPage;
+import utils.DriverFactory;
 import utils.Report;
 
 public class LoginTest {
@@ -24,8 +26,8 @@ public class LoginTest {
         String password = MassOfData.SENHA_VALIDA_4;
         String expectedLogin = "My Account";
 
-        ChromeDriver navegador = new ChromeDriver();
-        navegador.manage().window().maximize();
+        ChromeDriver navegador = DriverFactory.createChrome();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 
@@ -54,8 +56,8 @@ public class LoginTest {
         String password = MassOfData.Senha_Ivalida;
         String expectedLogin = "Warning: No match for E-Mail Address and/or Password.";
 
-        ChromeDriver navegador = new ChromeDriver();
-        navegador.manage().window().maximize();
+        ChromeDriver navegador = DriverFactory.createChrome();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 
@@ -77,11 +79,12 @@ public class LoginTest {
         navegador.quit();
     }
 
-        // Teste com DatDriven e massa de Dados Dinamica Estruturado
-  @Test(dataProvider = "loginData", dataProviderClass = Utils.class)
+    // Teste com DatDriven e massa de Dados Dinamica Estruturado
+    @Test(dataProvider = "loginData", dataProviderClass = Utils.class)
     public void loginDataDrivenTest(String email, String senha, String esperado) {
-        ChromeDriver navegador = new ChromeDriver();
-        navegador.manage().window().maximize();
+      
+        ChromeDriver navegador = DriverFactory.createChrome();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 
@@ -100,21 +103,12 @@ public class LoginTest {
             Assert.assertEquals(mensagemExibida, esperado);
         }
 
-         String nomePasta = "LoginTestDocuments";
+        String nomePasta = "LoginTestDocuments";
         String nomeTeste = "loginDataDrivenTest";
 
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        
-
         navegador.quit();
     }
 }
-
-
-
-
-
-
-

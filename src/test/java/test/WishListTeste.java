@@ -1,5 +1,6 @@
 package test;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -10,6 +11,7 @@ import Checks.WiishListCheck;
 import data.MassOfData;
 import pages.LoginPage;
 import pages.WishListPage;
+import utils.DriverFactory;
 import utils.Report;
 
 public class WishListTeste {
@@ -26,8 +28,10 @@ public class WishListTeste {
         String password = MassOfData.SENHA_VALIDA;
         String expextedMessege = "My Wishlist";
 
-        ChromeDriver navegador = new ChromeDriver();
-        navegador.manage().window().maximize();
+        ChromeDriver navegador = DriverFactory.createChrome();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
+
+        //navegador.manage().window().maximize();
 
         LoginPage loginPage = new LoginPage(navegador);
 
