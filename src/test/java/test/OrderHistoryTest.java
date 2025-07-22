@@ -1,6 +1,7 @@
 package test;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +27,7 @@ public class OrderHistoryTest {
         String password = MassOfData.SENHA_VALIDA;
         String expextedMessege = "Orders";
 
-       ChromeDriver navegador = DriverFactory.createChrome();
+       WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);

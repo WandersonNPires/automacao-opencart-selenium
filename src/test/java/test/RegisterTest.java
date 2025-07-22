@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -31,7 +32,7 @@ public class RegisterTest {
         String password = "eumesmo12";
         String ExpectedMessenge = "Your Account Has Been Created!";
 
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         RegisterPage registerPage = new RegisterPage(navegador);
@@ -71,7 +72,7 @@ public class RegisterTest {
         String password = MassOfData.SENHA_VALIDA;
         String ExpectedMessenge = "Warning: E-Mail Address is already registered!";
 
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         RegisterPage registerPage = new RegisterPage(navegador);

@@ -3,6 +3,7 @@ package test;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +29,7 @@ public class ForgottenPasswordTest {
         String emailAddress = MassOfData.EMAIL_VALIDO_3;
         String ExpectedMessege = "text_success";
         
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         ForgottenPasswordPage ForgottenPasswordPage = new ForgottenPasswordPage(navegador);

@@ -1,6 +1,7 @@
 package test;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -27,7 +28,7 @@ public class LoginTest {
         String password = MassOfData.SENHA_VALIDA_4;
         String expectedLogin = "My Account";
 
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
@@ -58,7 +59,7 @@ public class LoginTest {
         String password = MassOfData.Senha_Ivalida;
         String expectedLogin = "Warning: No match for E-Mail Address and/or Password.";
 
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
@@ -86,7 +87,7 @@ public class LoginTest {
     @Test(dataProvider = "loginData", dataProviderClass = Utils.class)
     public void loginDataDrivenTest(String email, String senha, String esperado) {
       
-        ChromeDriver navegador = DriverFactory.createChrome();
+        WebDriver navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
