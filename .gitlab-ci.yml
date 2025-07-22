@@ -15,10 +15,7 @@ test:
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
     - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
     - apt-get update && apt-get install -y google-chrome-stable
-    - CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
-    - wget -O /tmp/chromedriver.zip $(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | grep -A 10 "version\": \"$CHROME_VERSION" | grep -o "https.*linux64.*zip" | head -1)
-    - unzip /tmp/chromedriver.zip -d /usr/local/bin/
-    - chmod +x /usr/local/bin/chromedriver
+    - chmod +x ./chromedriver.exe
 
   script:
     - mvn clean test -DsuiteXmlFile=testngsuite.xml
