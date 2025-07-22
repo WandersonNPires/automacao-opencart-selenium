@@ -1,0 +1,25 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: selenium/standalone-chrome:latest
+  script:
+    - mvn clean test
+  artifacts:
+    when: always
+    paths:
+      - target/surefire-reports/
+      - AddProductDocuments
+      - CheckoutDocuments
+      - EditAccountDocuments
+      - EditPassDocuments
+      - ForgottenPassDocuments
+      - LoginTestDocuments
+      - LogoutTestDocuments
+      - OrderHistoryDocuments
+      - RegisterTestDocuments
+      - SearchProductDocuments
+      - WishTestDocuments
+
+    expire_in: 1 week
