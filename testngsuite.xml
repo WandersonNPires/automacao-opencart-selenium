@@ -6,8 +6,8 @@
       <class name="test.AddProductToCartTest"/>
       <class name="test.CheckoutTest"/>
       <class name="test.EditAccountInformationTest"/>
-      <class name="EditPassWordAccountTest"/>
-      <class name="ForgottenPasswordTest"/>
+      <class name="test.EditPassWordAccountTest"/>
+      <class name="test.ForgottenPasswordTest"/>
       <class name="test.LoginTest"/>
       <class name="test.LogoutTest"/>
       <class name="test.OrderHistoryTest"/>
