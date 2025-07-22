@@ -19,33 +19,33 @@ test:
 
   script:
     - mvn clean test -DsuiteXmlFile=testngsuite.xml
-    - echo "Conteúdo do diretório src/test/java/documents:"
-    - ls -la src/test/java/documents/
-    - ls -la src/test/java/documents/AddProductDocuments || echo "AddProductDocuments não existe"
-    - ls -la src/test/java/documents/CheckoutDocuments || echo "CheckoutDocuments não existe"
-    - ls -la src/test/java/documents/EditAccountDocuments || echo "EditAccountDocuments não existe"
-    - ls -la src/test/java/documents/EditPassDocuments || echo "EditPassDocuments não existe"
-    - ls -la src/test/java/documents/ForgottenPassDocuments || echo "ForgottenPassDocuments não existe"
-    - ls -la src/test/java/documents/LoginTestDocuments || echo "LoginTestDocuments não existe"
-    - ls -la src/test/java/documents/LogoutTestDocuments || echo "LogoutTestDocuments não existe"
-    - ls -la src/test/java/documents/OrderHistoryDocuments || echo "OrderHistoryDocuments não existe"
-    - ls -la src/test/java/documents/RegisterTestDocuments || echo "RegisterTestDocuments não existe"
-    - ls -la src/test/java/documents/SearchProductDocuments || echo "SearchProductDocuments não existe"
-    - ls -la src/test/java/documents/WishTestDocuments || echo "WishTestDocuments não existe"
+    - echo "Conteúdo do diretório documents:"
+    - ls -la documents/
+    - ls -la documents/AddProductDocuments || echo "AddProductDocuments não existe"
+    - ls -la documents/CheckoutDocuments || echo "CheckoutDocuments não existe"
+    - ls -la documents/EditAccountDocuments || echo "EditAccountDocuments não existe"
+    - ls -la documents/EditPassDocuments || echo "EditPassDocuments não existe"
+    - ls -la documents/ForgottenPassDocuments || echo "ForgottenPassDocuments não existe"
+    - ls -la documents/LoginTestDocuments || echo "LoginTestDocuments não existe"
+    - ls -la documents/LogoutTestDocuments || echo "LogoutTestDocuments não existe"
+    - ls -la documents/OrderHistoryDocuments || echo "OrderHistoryDocuments não existe"
+    - ls -la documents/RegisterTestDocuments || echo "RegisterTestDocuments não existe"
+    - ls -la documents/SearchProductDocuments || echo "SearchProductDocuments não existe"
+    - ls -la documents/WishTestDocuments || echo "WishTestDocuments não existe"
 
   artifacts:
     when: always
     paths:
       - target/surefire-reports/
-      - src/test/java/documents/AddProductDocuments/
-      - src/test/java/documents/CheckoutDocuments/
-      - src/test/java/documents/EditAccountDocuments/
-      - src/test/java/documents/EditPassDocuments/
-      - src/test/java/documents/ForgottenPassDocuments/
-      - src/test/java/documents/LoginTestDocuments/
-      - src/test/java/documents/LogoutTestDocuments/
-      - src/test/java/documents/OrderHistoryDocuments/
-      - src/test/java/documents/RegisterTestDocuments/
-      - src/test/java/documents/SearchProductDocuments/
-      - src/test/java/documents/WishTestDocuments/
+      - documents/AddProductDocuments/
+      - documents/CheckoutDocuments/
+      - documents/EditAccountDocuments/
+      - documents/EditPassDocuments/
+      - documents/ForgottenPassDocuments/
+      - documents/LoginTestDocuments/
+      - documents/LogoutTestDocuments/
+      - documents/OrderHistoryDocuments/
+      - documents/RegisterTestDocuments/
+      - documents/SearchProductDocuments/
+      - documents/WishTestDocuments/
     expire_in: 1 week

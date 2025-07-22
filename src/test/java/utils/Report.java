@@ -19,7 +19,7 @@ public class Report {
         File screenshot = ((TakesScreenshot) navegador).getScreenshotAs(OutputType.FILE);
 
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String caminhoArquivo = "src/test/java/documents/" + nomePasta + "/" + nomeTeste + "_" + timestamp + ".png";
+        String caminhoArquivo = "documents/" + nomePasta + "/" + nomeTeste + "_" + timestamp + ".png";
 
         try {
             Files.copy(screenshot.toPath(), Paths.get(caminhoArquivo));
@@ -30,7 +30,7 @@ public class Report {
     }
 
     public static void gerarRelatorioPorTeste(String nomePasta, String nomeTeste) {
-        String caminhoArquivo = "src/test/java/documents/" + nomePasta + "/" + nomeTeste + "_relatorio.html";
+        String caminhoArquivo = "documents/" + nomePasta + "/" + nomeTeste + "_relatorio.html";
 
         try {
             FileWriter writer = new FileWriter(caminhoArquivo);
