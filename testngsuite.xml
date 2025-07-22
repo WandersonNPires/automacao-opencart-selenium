@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite de Testes">
+  <test name="Execução dos Testes">
+    <classes>
+      <class name="test.AddProductToCartTest"/>
+      <class name="test.CheckoutTest"/>
+      <class name="test.EditAccountInformationTest"/>
+      <class name="EditPassWordAccountTeste"/>
+      <class name="ForgottenPasswordTest"/>
+      <class name="test.LoginTest"/>
+      <class name="test.LogoutTest"/>
+      <class name="test.OrderHistoryTest"/>
+      <class name="test.RegisterTest"/>
+      <class name="test.SearchProductTest"/>
+      <class name="test.WishListTeste"/>
+    </classes>
+  </test>
+</suite>
