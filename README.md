@@ -92,6 +92,35 @@ Após a instalação, exclua a pasta de instalação para garantir a segurança:
 🛒 **Loja (frontend):**  
 👉 http://localhost/meu-opencart
 
+## 🗃️ Importar Banco de Dados
+
+1. Com o banco `opencart_db` criado, vá até a aba **Importar** no phpMyAdmin.  
+2. Escolha o arquivo localizado em:  
+/database/opencart_db.sql  
+3. Clique em **Executar** para importar os dados.
+
+✅ Pronto! Seu banco de dados estará restaurado com os dados necessários para rodar o projeto.
+
+## 🚀 Executando os Testes Automatizados
+
+1. Clone o repositório:  git clone https://gitlab.com/seu-usuario/seu-projeto.git
+
+2. Navegue até o diretório do projeto:  cd seu-projeto
+
+
+3. Execute os testes com Maven:  
+
+
+> Os testes rodam em modo headless automaticamente (sem abrir o navegador).
+
+## 📦 CI/CD com GitLab
+
+Este projeto possui integração contínua configurada via GitLab CI/CD. A cada push no repositório, os testes serão executados automaticamente usando um container com o Chrome via Docker.
+
+Acompanhe os resultados na aba:  
+CI/CD > Pipelines dentro do GitLab.
+
+
 ---
 
 
