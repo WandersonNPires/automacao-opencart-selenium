@@ -1,25 +1,44 @@
 stages:
   - test
 
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  # Usado para gerar relatórios em UTF-8 e evitar problemas de encoding
+  LANG: en_US.UTF-8
+
 test:
   stage: test
-  image: selenium/standalone-chrome:latest
+  image: maven:3.9.6-eclipse-temurin-17
+  services:
+    - selenium/standalone-chrome:latest
+  before_script:
+    - apt-get update && apt-get install -y wget unzip
+    # Instala o Google Chrome
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+    - apt-get update && apt-get install -y google-chrome-stable
+    # Baixa e configura o ChromeDriver compatível
+    - CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
+    - wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | grep -A 10 "version\": \"$CHROME_VERSION" | grep -o "https.*linux64.*zip" | head -1) || true
+    - unzip /tmp/chromedriver.zip -d /usr/local/bin/
+    - chmod +x /usr/local/bin/chromedriver
+
   script:
     - mvn clean test
+
   artifacts:
     when: always
     paths:
       - target/surefire-reports/
-      - AddProductDocuments
-      - CheckoutDocuments
-      - EditAccountDocuments
-      - EditPassDocuments
-      - ForgottenPassDocuments
-      - LoginTestDocuments
-      - LogoutTestDocuments
-      - OrderHistoryDocuments
-      - RegisterTestDocuments
-      - SearchProductDocuments
-      - WishTestDocuments
-
+      - AddProductDocuments/
+      - CheckoutDocuments/
+      - EditAccountDocuments/
+      - EditPassDocuments/
+      - ForgottenPassDocuments/
+      - LoginTestDocuments/
+      - LogoutTestDocuments/
+      - OrderHistoryDocuments/
+      - RegisterTestDocuments/
+      - SearchProductDocuments/
+      - WishTestDocuments/
     expire_in: 1 week
