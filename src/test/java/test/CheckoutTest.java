@@ -20,7 +20,7 @@ import utils.PastasDocuments;
 import utils.Report;
 
 public class CheckoutTest {
-    ChromeDriver navegador;
+    WebDriver navegador;
 
     @BeforeClass
     public void prepararBanco() {
@@ -30,7 +30,7 @@ public class CheckoutTest {
     @BeforeMethod
     public void setup() {
 
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
