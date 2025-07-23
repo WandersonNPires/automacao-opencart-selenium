@@ -141,6 +141,9 @@ CI/CD > Pipelines dentro do GitLab.
 - 🚀 Maven  
 - 🌐 Selenium WebDriver  
 - ☕ Java - 11.0.26  
+- Chomedriver.exe (disponivel na raiz do projeto)
+- geckodriver.exe(disponivel na raiz do projeto)
+obs: A versão utilizada nesse projeto suporta os 2 navegadores mais utilizados
 
 ---
 
