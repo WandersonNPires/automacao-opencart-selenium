@@ -31,9 +31,9 @@ public class WishListTeste {
         String expextedMessege = "My Wishlist";
 
         WebDriver navegador = DriverFactory.createChrome();
-        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
-        navegador.manage().window().maximize();
+       // navegador.manage().window().maximize();
 
         LoginPage loginPage = new LoginPage(navegador);
 

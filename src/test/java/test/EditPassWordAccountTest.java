@@ -26,8 +26,8 @@ public class EditPassWordAccountTest {
     public void editarConta() throws InterruptedException {
         
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().maximize();
-        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+       // navegador.manage().window().maximize();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 

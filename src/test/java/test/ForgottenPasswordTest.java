@@ -30,8 +30,8 @@ public class ForgottenPasswordTest {
         String ExpectedMessege = "text_success";
         
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().maximize();
-        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+        //navegador.manage().window().maximize();
+        navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         ForgottenPasswordPage ForgottenPasswordPage = new ForgottenPasswordPage(navegador);
 
