@@ -29,7 +29,8 @@ public class LoginTest {
         String expectedLogin = "My Account";
 
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().maximize();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 
@@ -88,8 +89,8 @@ public class LoginTest {
     public void loginDataDrivenTest(String email, String senha, String esperado) {
       
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
-
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().maximize();
         LoginPage loginPage = new LoginPage(navegador);
 
         loginPage.acessarAplicacaoWeb();

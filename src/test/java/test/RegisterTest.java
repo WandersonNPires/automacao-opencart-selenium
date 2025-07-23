@@ -33,7 +33,8 @@ public class RegisterTest {
         String ExpectedMessenge = "Your Account Has Been Created!";
 
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().maximize();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         RegisterPage registerPage = new RegisterPage(navegador);
 
@@ -73,7 +74,8 @@ public class RegisterTest {
         String ExpectedMessenge = "Warning: E-Mail Address is already registered!";
 
         WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().maximize();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         RegisterPage registerPage = new RegisterPage(navegador);
 
