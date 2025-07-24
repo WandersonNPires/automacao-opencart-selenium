@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,15 +18,24 @@ import utils.Report;
 
 public class EditPassWordAccountTest {
 
+
+    WebDriver navegador;
     @BeforeClass
     public void prepararBanco() {
         MassOfData.prepararMassa();
     }
 
+    @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
+    }
+
     @Test
     public void editarConta() throws InterruptedException {
         
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
        // navegador.manage().window().maximize();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
@@ -60,7 +70,7 @@ public class EditPassWordAccountTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
+        
 
     }
 }

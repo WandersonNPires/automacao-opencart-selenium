@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -18,17 +19,28 @@ import utils.Report;
 
 public class EditAccountInformationTest {
 
+    WebDriver navegador;
+
     @BeforeClass
     public void prepararBanco() {
         MassOfData.prepararMassa();
     }
 
+    @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
+    }
+
+    
+
     @Test
     public void editarInformacaoConta() {
         
-        WebDriver navegador = DriverFactory.createChrome();
-       // navegador.manage().window().maximize();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
+         navegador = DriverFactory.createChrome();
+       navegador.manage().window().maximize();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
 
@@ -46,9 +58,9 @@ public class EditAccountInformationTest {
         edit.acessarTelaAlterarConta();
         edit.clicarParaMudarDadosConta();
 
-        String novoNome = "WandersonP";
-        String novoUltimoNome = "SilvaP";
-        String novoEmail = "wandersonneivaP@gmail.com";
+        String novoNome = "WandersonALTERADO";
+        String novoUltimoNome = "SilvaaLTERADO";
+        String novoEmail = "wandersonneivaaLTERADO@gmail.com";
         edit.inserirNovosDados(novoNome);
         edit.inserirUltimoNome(novoUltimoNome);
         edit.inseriEmail(novoEmail);
@@ -65,7 +77,7 @@ public class EditAccountInformationTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
+        
 
     }
 }
