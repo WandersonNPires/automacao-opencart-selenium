@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.TestInstance;
@@ -17,7 +18,7 @@ import utils.PastasDocuments;
 import utils.Report;
 
 public class WishListTeste {
-
+     WebDriver navegador;
     @BeforeClass
     public void prepararBanco() {
         MassOfData.prepararMassa();
@@ -30,7 +31,7 @@ public class WishListTeste {
         String password = MassOfData.SENHA_VALIDA;
         String expextedMessege = "My Wishlist";
 
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
        // navegador.manage().window().maximize();
@@ -59,8 +60,13 @@ public class WishListTeste {
        Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
        Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-       navegador.quit();
-
     }
 
+  @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
+    }
+    
 }

@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import Checks.RegisterCheck;
@@ -22,6 +23,14 @@ import utils.PastasDocuments;
 import utils.Report;
 
 public class RegisterTest {
+    WebDriver navegador;
+
+    @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
+    }
 
     @Test
     public void AcessarTelaRegistro() {
@@ -32,7 +41,7 @@ public class RegisterTest {
         String password = "eumesmo12";
         String ExpectedMessenge = "Your Account Has Been Created!";
 
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
         navegador.manage().window().maximize();
         //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
@@ -58,7 +67,6 @@ public class RegisterTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -99,7 +107,6 @@ public class RegisterTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 

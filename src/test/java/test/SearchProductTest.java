@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -26,11 +27,18 @@ public class SearchProductTest {
 
     }
 
+    @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
+    }
+
     @BeforeMethod
     public void setup() {
          navegador = DriverFactory.createChrome();
-         //navegador.manage().window().maximize();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
+         navegador.manage().window().maximize();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
         loginPage.acessarAplicacaoWeb();
@@ -59,7 +67,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -82,7 +89,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -106,7 +112,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -129,7 +134,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -151,7 +155,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
     }
 
     @Test
@@ -172,7 +175,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -194,7 +196,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -216,7 +217,6 @@ public class SearchProductTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
