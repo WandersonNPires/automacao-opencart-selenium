@@ -55,6 +55,11 @@ public class ContactUsTest {
         String expectedMessage = "Your enquiry has been successfully sent to the store owner!";
         Assert.assertEquals(mensagemEsperada, expectedMessage);
         
+        String nomePasta ="ContactUsDocuments";
+       String nomeTeste ="contactarEmpresa";
+
+       Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
+       Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
 
     }

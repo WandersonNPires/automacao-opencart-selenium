@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -27,12 +28,14 @@ public class CheckoutTest {
         MassOfData.prepararMassa();
     }
 
+  
+
     @BeforeMethod
     public void setup() {
 
          navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
-
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+            navegador.manage().window().maximize();
         LoginPage loginPage = new LoginPage(navegador);
         loginPage.acessarAplicacaoWeb();
         loginPage.inserirEmailLogin(MassOfData.EMAIL_VALIDO);
@@ -58,7 +61,6 @@ public class CheckoutTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -105,11 +107,10 @@ public class CheckoutTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
     }
 
     @Test
-    public void realizarCompraNovoEdereço() {
+    public void realizarCompraNovoEdereco() {
 
         AddProductToCartPage addProductToCartPage = new AddProductToCartPage(navegador);
 
@@ -123,9 +124,9 @@ public class CheckoutTest {
         String firstName = MassOfData.FIRST_NAME_VALIDO;
         String lastName = MassOfData.LAST_NAME_VALIDO;
         String company = "B2";
-        String address = "Rua nova2";
+        String address = "Rua nova633";
         String city = "Belo Horizonte";
-        String postCode = "133";
+        String postCode = "556";
 
         checkoutPage.inserirNovoEndereco();
         checkoutPage.inserirPrimeiroNome(firstName);
@@ -135,7 +136,7 @@ public class CheckoutTest {
         checkoutPage.inserirCidade(city);
         checkoutPage.inseirCodigoPostal(postCode);
         checkoutPage.selecionarPais();
-        checkoutPage.selecionarRegiao();
+        checkoutPage.selecionarPaisERegiao();
         checkoutPage.confirmanovoEmail();
         checkoutPage.selecionarModoDeEnvio();
         checkoutPage.confirmarFrete();
@@ -166,7 +167,6 @@ public class CheckoutTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -197,7 +197,7 @@ public class CheckoutTest {
         checkoutPage.inserirCidade(city);
         checkoutPage.inseirCodigoPostal(postCode);
         checkoutPage.selecionarPais();
-        checkoutPage.selecionarRegiao();
+        checkoutPage.selecionarPaisERegiao();
         checkoutPage.confirmanovoEmail();
 
         CheckoutCheck dadodInvalidos = new CheckoutCheck(navegador);
@@ -212,7 +212,6 @@ public class CheckoutTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 

@@ -3,6 +3,7 @@ package pages;
 import java.security.PublicKey;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -49,8 +50,16 @@ public class CheckoutPage extends PageBase {
         botao.click();
     }
 
+    // public void confirmanovoEmail() {
+    // WebElement botao = navegador.findElement(By.id("button-shipping-address"));
+    // ((JavascriptExecutor) navegador).executeScript("arguments[0].click();",
+    // botao);
+    // }
     public void selecionarModoDeEnvio() {
-        clicar(By.xpath("//*[@id=\"button-shipping-methods\"]"));
+        WebElement botao = navegador.findElement(By.xpath("//*[@id='button-shipping-methods']"));
+        Actions actions = new Actions(navegador);
+        actions.moveToElement(botao).perform(); 
+        botao.click(); 
     }
 
     public void confirmarFrete() {
@@ -132,11 +141,26 @@ public class CheckoutPage extends PageBase {
         select.selectByValue("30");
     }
 
-    public void selecionarRegiao() {
-        WebElement dropdown = navegador.findElement(By.xpath("//*[@id='input-shipping-zone']"));
-        Select select = new Select(dropdown);
-        select.selectByValue("454");
-    }
+    public void selecionarPaisERegiao() {
+        WebDriverWait wait = new WebDriverWait(navegador, 10);
 
+        WebElement paisDropdown = wait
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("input-shipping-country")));
+        Select selectPais = new Select(paisDropdown);
+        selectPais.selectByValue("30");
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("input-shipping-zone")));
+
+        WebElement regiaoDropdown = navegador.findElement(By.id("input-shipping-zone"));
+
+        wait.until(driver -> {
+            Select select = new Select(regiaoDropdown);
+            return select.getOptions().stream()
+                    .anyMatch(option -> "452".equals(option.getAttribute("value")));
+        });
+
+        Select selectRegiao = new Select(regiaoDropdown);
+        selectRegiao.selectByValue("452");
+    }
 
 }
