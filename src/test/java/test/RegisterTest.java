@@ -35,9 +35,9 @@ public class RegisterTest {
     @Test
     public void AcessarTelaRegistro() {
 
-        String firstName = "usuarioNovo";
+        String firstName = "usuarioNovo2";
         String lastName = "Silva";
-        String email = "Peter@gmail.com";
+        String email = "PeterNeiva@gmail.com";
         String password = "eumesmo12";
         String ExpectedMessenge = "Your Account Has Been Created!";
 
