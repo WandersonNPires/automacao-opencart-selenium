@@ -150,18 +150,11 @@ obs: A versão utilizada nesse projeto suporta os 2 navegadores mais utilizados
 ## 🗂️ Pasta Documentos
 
 Foi criada uma pasta **documentos**, onde as evidências dos testes serão alocadas após sua execução.
+Para cada teste existe uma pasta que irá alocar suas evidencias.
 
 ---
 
 ## ✅ Cenários de Teste
-
-### 🏠 Página Inicial
-- Validar o carregamento da home (título, banners, carrossel)
-- Verificar se a navegação pelo menu superior funciona
-- Validar que as categorias principais exibem seus produtos
-- Validar funcionamento do carrossel principal
-
----
 
 ### 🔍 Busca de Produtos
 - Buscar produto existente e validar resultado
