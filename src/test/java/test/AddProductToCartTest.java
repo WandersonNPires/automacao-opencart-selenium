@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,6 +24,13 @@ public class AddProductToCartTest {
     @BeforeClass
     public void prepararBanco() {
         MassOfData.prepararMassa();
+    }
+
+     @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
     }
 
     @BeforeMethod
@@ -81,7 +89,6 @@ public class AddProductToCartTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -113,7 +120,6 @@ public class AddProductToCartTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -152,7 +158,6 @@ public class AddProductToCartTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -182,7 +187,6 @@ public class AddProductToCartTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
