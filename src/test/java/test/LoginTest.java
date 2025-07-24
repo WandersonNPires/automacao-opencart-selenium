@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.Utils;
@@ -16,10 +17,18 @@ import utils.PastasDocuments;
 import utils.Report;
 
 public class LoginTest {
+    WebDriver navegador;
 
     @BeforeClass
     public void prepararBanco() {
         MassOfData.prepararMassa();
+    }
+
+      @AfterMethod
+    public void tearDown() {
+        if (navegador != null) {
+            navegador.quit();
+        }
     }
 
     @Test
@@ -28,7 +37,7 @@ public class LoginTest {
         String password = MassOfData.SENHA_VALIDA_4;
         String expectedLogin = "My Account";
 
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
         //navegador.manage().window().maximize();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
@@ -50,7 +59,6 @@ public class LoginTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
 
     }
 
@@ -60,7 +68,7 @@ public class LoginTest {
         String password = MassOfData.Senha_Ivalida;
         String expectedLogin = "Warning: No match for E-Mail Address and/or Password.";
 
-        WebDriver navegador = DriverFactory.createChrome();
+         navegador = DriverFactory.createChrome();
         navegador.manage().window().setSize(new Dimension(1920, 1080));
 
         LoginPage loginPage = new LoginPage(navegador);
@@ -81,16 +89,15 @@ public class LoginTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
     }
 
     // Teste com DatDriven e massa de Dados Dinamica Estruturado
     @Test(dataProvider = "loginData", dataProviderClass = Utils.class)
     public void loginDataDrivenTest(String email, String senha, String esperado) {
       
-        WebDriver navegador = DriverFactory.createChrome();
-        navegador.manage().window().setSize(new Dimension(1920, 1080));
-        //navegador.manage().window().maximize();
+         navegador = DriverFactory.createChrome();
+        //navegador.manage().window().setSize(new Dimension(1920, 1080));
+        navegador.manage().window().maximize();
         LoginPage loginPage = new LoginPage(navegador);
 
         loginPage.acessarAplicacaoWeb();
@@ -103,9 +110,9 @@ public class LoginTest {
             String mensagemExibida = loginCheck.loginFeito();
             Assert.assertEquals(mensagemExibida, esperado);
         } else {
-            RegisterCheck loginCheck = new RegisterCheck(navegador);
-            String mensagemExibida = loginCheck.capturarAlerta();
-            Assert.assertEquals(mensagemExibida, esperado);
+            RegisterCheck loginCheck2 = new RegisterCheck(navegador);
+            String mensagemExibida2 = loginCheck2.capturarAlerta();
+            Assert.assertEquals(mensagemExibida2, esperado);
         }
 
         PastasDocuments.criarPastaSeNaoExistir("LoginTestDocuments");
@@ -115,6 +122,5 @@ public class LoginTest {
         Report.tirarScreenshot(navegador, nomePasta, nomeTeste);
         Report.gerarRelatorioPorTeste(nomePasta, nomeTeste);
 
-        navegador.quit();
     }
 }
