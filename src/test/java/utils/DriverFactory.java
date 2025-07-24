@@ -18,7 +18,17 @@ public class DriverFactory {
 
         if (os.contains("win")) {
             System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-            options.addArguments("--start-maximized");
+
+            // Comentado para rodar sempre em headless
+            // options.addArguments("--start-maximized");
+            // return new ChromeDriver(options);
+
+            // Headless ativado mesmo no Windows
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
             return new ChromeDriver(options);
         } else {
             // Configuração para ambiente de CI (Linux + Selenium Grid)
@@ -42,7 +52,17 @@ public class DriverFactory {
 
         if (os.contains("win")) {
             System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-            options.addArguments("--start-maximized");
+
+            // Comentado para rodar sempre em headless
+            // options.addArguments("--start-maximized");
+            // return new FirefoxDriver(options);
+
+            // Headless ativado mesmo no Windows
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
             return new FirefoxDriver(options);
         } else {
             options.addArguments("--headless");
@@ -59,4 +79,3 @@ public class DriverFactory {
         }
     }
 }
-
